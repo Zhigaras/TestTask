@@ -1,7 +1,7 @@
 object Dependencies {
     
-    const val appcompat = "androidx.appcompat:appcompat:${Versions.appcompat}"
     const val coreKtx = "androidx.core:core-ktx:${Versions.coreKtx}"
+    const val appcompat = "androidx.appcompat:appcompat:${Versions.appcompat}"
     const val material = "com.google.android.material:material:${Versions.material}"
     const val koinAndroid = "io.insert-koin:koin-android:${Versions.koin}"
     const val lificycle = "androidx.lifecycle:lifecycle-viewmodel-ktx:${Versions.lifecycle}"
@@ -12,10 +12,10 @@ object Dependencies {
     const val espresso = "androidx.test.espresso:espresso-core:${Versions.espresso}"
     
     object Versions {
-        
+    
+        const val coreKtx = "1.12.0"
         const val appcompat = "1.6.1"
-        const val coreKtx = "1.10.1"
-        const val material = "1.9.0"
+        const val material = "1.10.0"
         const val koin = "3.5.0"
         const val lifecycle = "2.6.1"
         const val recyclerView = "1.3.1"
