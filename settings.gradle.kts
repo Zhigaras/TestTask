@@ -16,3 +16,4 @@ dependencyResolutionManagement {
 rootProject.name = "TestTask"
 include(":app")
 include(":core")
+include(":feature:hotel")
