@@ -1,20 +1,17 @@
 plugins {
-    id(Plugins.application)
+    id(Plugins.library)
     id(Plugins.android)
 }
 
 android {
-    namespace = "com.zhigaras.testtask"
+    namespace = "com.zhigaras.uikit"
     compileSdk = Config.compileSdk
     
     defaultConfig {
-        applicationId = "com.zhigaras.testtask"
         minSdk = Config.minSdk
-        targetSdk = Config.targetSdk
-        versionCode = Config.versionCode
-        versionName = Config.versionName
         
         testInstrumentationRunner = Config.testInstrumentationRunner
+        consumerProguardFiles("consumer-rules.pro")
     }
     
     buildTypes {
@@ -36,9 +33,6 @@ android {
 }
 
 dependencies {
-    
-    implementation(project(":uiKit"))
-    implementation(project(":feature:hotel"))
     
     implementation(Dependencies.coreKtx)
     implementation(Dependencies.appcompat)

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="ButtonStyle" parent="Widget.MaterialComponents.Button">
+        <item name="android:backgroundTint">@color/blue</item>
+        <item name="android:textColor">@color/white10</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="cornerRadius">15dp</item>
+        <item name="android:padding">15dp</item>
+        <item name="android:textAppearance">@style/RegularText16</item>
+    </style>
+
+    <style name="RegularText14">
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="RegularText16">
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="RegularText18">
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <style name="RegularText22">
+        <item name="android:textSize">22sp</item>
+    </style>
+
+    <style name="RegularText30">
+        <item name="android:textSize">30sp</item>
+    </style>
+</resources>
