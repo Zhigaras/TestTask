@@ -24,6 +24,7 @@
     </ScrollView>
 
     <com.google.android.material.button.MaterialButton
+        style="@style/CommonButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="16dp"

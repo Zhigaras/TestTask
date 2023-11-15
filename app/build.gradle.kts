@@ -37,6 +37,7 @@ android {
 
 dependencies {
     
+    implementation(project(":core"))
     implementation(project(":uiKit"))
     implementation(project(":feature:hotel"))
     
