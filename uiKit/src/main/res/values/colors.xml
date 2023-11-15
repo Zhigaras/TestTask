@@ -4,6 +4,7 @@
     <color name="black">#000000</color>
     <color name="blue">#0D72FF</color>
     <color name="yellow">#FFC700</color>
+    <color name="yellow_20percent">#33FFC700</color>
     <color name="gray10">#A9ABB7</color>
     <color name="gray20">#828796</color>
     <color name="white20">#FBFBFC</color>
