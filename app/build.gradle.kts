@@ -37,6 +37,8 @@ android {
 
 dependencies {
     
+    implementation(project(":uiKit"))
+    
     implementation(Dependencies.coreKtx)
     implementation(Dependencies.appcompat)
     implementation(Dependencies.material)
