@@ -1,25 +1,25 @@
 package com.zhigaras.uikit
 
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import androidx.recyclerview.widget.RecyclerView
+import coil.load
 
 class CarouselAdapter(private val list: List<String>) :
     RecyclerView.Adapter<CarouselAdapter.CarouselViewHolder>() {
     
-    class CarouselViewHolder(private val view: View) : RecyclerView.ViewHolder(view) {
+    class CarouselViewHolder(private val view: ImageView) : RecyclerView.ViewHolder(view) {
         
         fun bind(item: String) {
-            view.findViewById<ImageView>(R.id.image).glideLoad(item)
+            view.load(item)
         }
     }
     
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CarouselViewHolder {
         return CarouselViewHolder(
             LayoutInflater.from(parent.context)
-                .inflate(R.layout.carousel_image_item, parent, false)
+                .inflate(R.layout.carousel_image_item, parent, false) as ImageView
         )
     }
     

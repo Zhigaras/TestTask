@@ -44,6 +44,7 @@ dependencies {
     implementation(Dependencies.material)
     implementation(Dependencies.lificycle)
     implementation(Dependencies.koinAndroid)
+    implementation(Dependencies.coil)
     
     testImplementation(Dependencies.jUnit)
     androidTestImplementation(Dependencies.androidJUnit)

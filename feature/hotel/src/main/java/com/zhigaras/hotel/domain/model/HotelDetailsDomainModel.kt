@@ -23,7 +23,7 @@ class HotelDetailsDomainModel(dto: HotelDetailsDto) {
         hotelAddress.text = address
         hotelName.text = name
         priceTextView.text = minimalPrice.toString() // TODO: replace with extension
-        imageCarousel.setImages(imageUrls)
+        imageCarousel.root.setImages(imageUrls)
         priceUnitTextView.text = priceUnit
         ratingTextView.root.setRating(rating, ratingName)
     }
