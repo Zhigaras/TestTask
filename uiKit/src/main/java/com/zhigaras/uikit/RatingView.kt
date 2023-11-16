@@ -8,7 +8,11 @@ class RatingView @JvmOverloads constructor(
     context: Context,
     attrs: AttributeSet? = null,
     defStyleAttr: Int = 0
-): AppCompatTextView(context, attrs, defStyleAttr) {
+) : AppCompatTextView(context, attrs, defStyleAttr) {
     
-
+    private val rateList = resources.getStringArray(R.array.rating)
+    
+    fun setRating(rating: Int) {
+        text = rateList[rating - 1]
+    }
 }

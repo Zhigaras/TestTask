@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="rating">
+        <item>1 Ужасно</item>
+        <item>2 Плохо</item>
+        <item>3 Удовлетворительно</item>
+        <item>4 Хорошо</item>
+        <item>5 Превосходно</item>
+    </string-array>
+</resources>
