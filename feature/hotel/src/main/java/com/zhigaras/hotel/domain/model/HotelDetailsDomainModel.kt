@@ -1,11 +1,7 @@
 package com.zhigaras.hotel.domain.model
 
-import android.view.LayoutInflater
-import com.google.android.material.chip.Chip
 import com.zhigaras.cloudservice.model.hotel.HotelDetailsDto
-import com.zhigaras.hotel.R
-import com.zhigaras.hotel.databinding.AboutHotelBinding
-import com.zhigaras.hotel.databinding.HotelDetailsBinding
+import com.zhigaras.hotel.ui.model.HotelDetailsUiModel
 
 class HotelDetailsDomainModel(dto: HotelDetailsDto) {
     private val address: String = dto.address
@@ -19,25 +15,15 @@ class HotelDetailsDomainModel(dto: HotelDetailsDto) {
     private val description: String = dto.aboutTheHotel.description
     private val peculiarities: List<String> = dto.aboutTheHotel.peculiarities
     
-    fun bindAboutHotel(binding: AboutHotelBinding) = with(binding) {
-        hotelAddress.text = address
-        hotelName.text = name
-        priceTextView.text = minimalPrice.toString() // TODO: replace with extension
-        imageCarousel.root.setImages(imageUrls)
-        priceUnitTextView.text = priceUnit
-        ratingTextView.root.setRating(rating, ratingName)
-    }
-    
-    fun bindHotelDetails(binding: HotelDetailsBinding) = with(binding) {
-        descriptionTextView.text = description
-        peculiarities.forEach { peculiarity ->
-            val chip = LayoutInflater.from(binding.root.context).inflate(
-                R.layout.peculiarities_single_chip,
-                binding.peculiaritiesChipGroup,
-                false
-            ) as Chip
-            chip.text = peculiarity
-            peculiaritiesChipGroup.addView(chip)
-        }
-    }
+    fun toUiModel() = HotelDetailsUiModel(
+        address = address,
+        id = id,
+        imageUrls = imageUrls,
+        minimalPrice = minimalPrice.toString(),// TODO: format
+        name = name,
+        priceUnit = priceUnit,
+        rating = "$rating $ratingName",
+        description = description,
+        peculiarities = peculiarities
+    )
 }

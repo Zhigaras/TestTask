@@ -2,7 +2,7 @@ package com.zhigaras.hotel.domain
 
 import com.zhigaras.core.UiState
 import com.zhigaras.hotel.databinding.FragmentHotelBinding
-import com.zhigaras.hotel.domain.model.HotelDetailsDomainModel
+import com.zhigaras.hotel.ui.model.HotelDetailsUiModel
 
 interface HotelUiState : UiState<FragmentHotelBinding> {
     
@@ -16,7 +16,7 @@ interface HotelUiState : UiState<FragmentHotelBinding> {
         }
     }
     
-    class Success(private val data: HotelDetailsDomainModel) : HotelUiState {
+    class Success(private val data: HotelDetailsUiModel) : HotelUiState {
         override fun update(binding: FragmentHotelBinding) {
             data.bindAboutHotel(binding.aboutHotelLayout)
             data.bindHotelDetails(binding.hotelDetailsLayout)
