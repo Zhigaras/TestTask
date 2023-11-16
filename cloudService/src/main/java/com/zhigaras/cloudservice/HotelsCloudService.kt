@@ -6,10 +6,10 @@ import com.zhigaras.cloudservice.model.rooms.RoomsInfoDto
 
 interface HotelsCloudService {
     
-    suspend fun getHotelInfo(): ApiResponse<HotelDetailsDto>
+    suspend fun getHotelInfo(): HotelDetailsDto
     
-    suspend fun getRoomsInfo(): ApiResponse<RoomsInfoDto>
+    suspend fun getRoomsInfo(): RoomsInfoDto
     
-    suspend fun getBookingInfo(): ApiResponse<BookingDto>
+    suspend fun getBookingInfo(): BookingDto
     
 }

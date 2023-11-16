@@ -37,11 +37,13 @@ dependencies {
     
     implementation(project(":core"))
     implementation(project(":uiKit"))
+    implementation(project(":cloudService"))
     
     implementation(Dependencies.coreKtx)
     implementation(Dependencies.appcompat)
     implementation(Dependencies.material)
     implementation(Dependencies.lificycle)
+    implementation(Dependencies.koinAndroid)
     
     testImplementation(Dependencies.jUnit)
     androidTestImplementation(Dependencies.androidJUnit)
