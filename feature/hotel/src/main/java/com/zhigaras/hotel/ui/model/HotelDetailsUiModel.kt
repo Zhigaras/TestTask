@@ -19,7 +19,7 @@ class HotelDetailsUiModel(
 ) {
     
     fun bindAboutHotel(binding: AboutHotelBinding) = with(binding) {
-        priceTextView.text = minimalPrice // TODO: replace with extension
+        priceTextView.text = binding.root.context.getString(R.string.price_from, minimalPrice)
         imageCarousel.root.setImages(imageUrls)
         priceUnitTextView.text = priceUnit
         hotelInfo.root.bind(name, address, rating)

@@ -9,4 +9,5 @@
         <item>Что не включено</item>
     </string-array>
     <string name="all_the_necessary">Самое необходимое</string>
+    <string name="price_from">От %1$s ₽</string>
 </resources>
