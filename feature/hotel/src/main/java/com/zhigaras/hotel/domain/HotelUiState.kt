@@ -7,9 +7,7 @@ import com.zhigaras.hotel.domain.model.HotelDetailsDomainModel
 interface HotelUiState : UiState<FragmentHotelBinding> {
     
     class Initial : HotelUiState {
-        override fun update(binding: FragmentHotelBinding) {
-        
-        }
+        override fun update(binding: FragmentHotelBinding) = Unit
     }
     
     class Loading : HotelUiState {
@@ -20,7 +18,8 @@ interface HotelUiState : UiState<FragmentHotelBinding> {
     
     class Success(private val data: HotelDetailsDomainModel) : HotelUiState {
         override fun update(binding: FragmentHotelBinding) {
-        
+            data.bindAboutHotel(binding.aboutHotelLayout)
+            data.bindHotelDetails(binding.hotelDetailsLayout)
         }
     }
     

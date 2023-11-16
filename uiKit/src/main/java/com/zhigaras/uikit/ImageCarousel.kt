@@ -19,12 +19,12 @@ class ImageCarousel @JvmOverloads constructor(
     
     override fun onAttachedToWindow() {
         super.onAttachedToWindow()
-        mediator.attach()
-        addView(binding.root)
+//        addView(binding.root)
     }
     
     fun setImages(list: List<String>) {
         binding.viewPager.adapter = CarouselAdapter(list)
+        mediator.attach()
     }
     
     override fun onDetachedFromWindow() {

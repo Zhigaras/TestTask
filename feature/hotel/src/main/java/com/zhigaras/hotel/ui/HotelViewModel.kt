@@ -13,6 +13,7 @@ class HotelViewModel(
 ) : BaseViewModel<HotelUiState>(dispatchers, flowWrapper) {
     
     init {
+        flowWrapper.post(HotelUiState.Loading())
         scopeLaunch(
             onBackground = { interactor.fetchHotelInfo() },
             onUi = { it.handle(flowWrapper) }

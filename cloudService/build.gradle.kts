@@ -36,5 +36,6 @@ dependencies {
     
     implementation(Dependencies.refrofit)
     implementation(Dependencies.gsonConverter)
+    implementation(Dependencies.loggingInterceptor)
     implementation(Dependencies.koinAndroid)
 }

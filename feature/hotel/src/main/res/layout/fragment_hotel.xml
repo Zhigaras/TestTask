@@ -6,16 +6,23 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="0dp"
+        android:layout_weight="1">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:divider="@drawable/main_card_divider"
+            android:orientation="vertical"
+            android:showDividers="middle">
 
-            <include layout="@layout/about_hotel" />
+            <include
+                android:id="@+id/about_hotel_layout"
+                layout="@layout/about_hotel" />
 
-            <include layout="@layout/hotel_details" />
+            <include
+                android:id="@+id/hotel_details_layout"
+                layout="@layout/hotel_details" />
 
         </LinearLayout>
 

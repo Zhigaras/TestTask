@@ -8,6 +8,9 @@ object Dependencies {
     const val recyclerView = "androidx.recyclerview:recyclerview:${Versions.recyclerView}"
     const val refrofit = "com.squareup.retrofit2:retrofit:${Versions.retrofit}"
     const val gsonConverter = "com.squareup.retrofit2:converter-gson:${Versions.retrofit}"
+    const val loggingInterceptor =
+        "com.squareup.okhttp3:logging-interceptor:${Versions.loggingInterceptor}"
+    const val glide = "com.github.bumptech.glide:glide:${Versions.glide}"
     
     const val jUnit = "junit:junit:${Versions.jUnit}"
     const val androidJUnit = "androidx.test.ext:junit:${Versions.androidJUnit}"
@@ -22,6 +25,8 @@ object Dependencies {
         const val lifecycle = "2.6.1"
         const val recyclerView = "1.3.1"
         const val retrofit = "2.9.0"
+        const val loggingInterceptor = "5.0.0-alpha.2"
+        const val glide = "4.16.0"
         
         const val jUnit = "4.13.2"
         const val androidJUnit = "1.1.5"

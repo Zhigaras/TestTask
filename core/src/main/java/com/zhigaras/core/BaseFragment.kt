@@ -5,7 +5,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.lifecycleScope
 import androidx.viewbinding.ViewBinding
+import kotlinx.coroutines.flow.FlowCollector
+import kotlinx.coroutines.launch
 
 abstract class BaseFragment<B : ViewBinding> : Fragment() {
     
@@ -26,5 +29,11 @@ abstract class BaseFragment<B : ViewBinding> : Fragment() {
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
+    }
+    
+    protected fun <T : UiState<*>> BaseViewModel<T>.scopeCollect(collector: FlowCollector<T>) {
+        viewLifecycleOwner.lifecycleScope.launch {
+            this@scopeCollect.collect(collector)
+        }
     }
 }
