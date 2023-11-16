@@ -7,6 +7,7 @@
     <color name="yellow_20percent">#33FFC700</color>
     <color name="gray10">#A9ABB7</color>
     <color name="gray20">#828796</color>
+    <color name="gray20_15percent">#26828796</color>
     <color name="white20">#FBFBFC</color>
     <color name="white30">#F6F6F9</color>
 </resources>
