@@ -1,7 +1,9 @@
 package com.zhigaras.hotel.domain.model
 
+import android.view.LayoutInflater
 import com.google.android.material.chip.Chip
 import com.zhigaras.cloudservice.model.hotel.HotelDetailsDto
+import com.zhigaras.hotel.R
 import com.zhigaras.hotel.databinding.AboutHotelBinding
 import com.zhigaras.hotel.databinding.HotelDetailsBinding
 
@@ -28,8 +30,14 @@ class HotelDetailsDomainModel(dto: HotelDetailsDto) {
     
     fun bindHotelDetails(binding: HotelDetailsBinding) = with(binding) {
         descriptionTextView.text = description
-        peculiarities.forEach { pec ->
-            peculiaritiesChipGroup.addView(Chip(this.root.context).also { it.text = pec })
+        peculiarities.forEach { peculiarity ->
+            val chip = LayoutInflater.from(binding.root.context).inflate(
+                R.layout.peculiarities_single_chip,
+                binding.peculiaritiesChipGroup,
+                false
+            ) as Chip
+            chip.text = peculiarity
+            peculiaritiesChipGroup.addView(chip)
         }
     }
 }
