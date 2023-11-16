@@ -1,4 +1,4 @@
-package com.zhigaras.hotel
+package com.zhigaras.hotel.ui
 
 import android.view.LayoutInflater
 import com.zhigaras.core.BaseFragment

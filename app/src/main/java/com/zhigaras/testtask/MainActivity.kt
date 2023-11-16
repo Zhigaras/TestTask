@@ -2,7 +2,7 @@ package com.zhigaras.testtask
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.zhigaras.hotel.HotelFragment
+import com.zhigaras.hotel.ui.HotelFragment
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

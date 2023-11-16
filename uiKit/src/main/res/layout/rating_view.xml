@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zhigaras.uikit.RatingView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/rating_view_bg"
+    android:drawableStart="@drawable/baseline_star_24"
+    android:drawableTint="@color/yellow"
+    android:paddingHorizontal="10dp"
+    android:paddingVertical="5dp"
+    android:textAppearance="@style/RegularText16"
+    android:textColor="@color/yellow"
+    tools:text="Great" />
