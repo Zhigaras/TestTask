@@ -14,7 +14,7 @@
             android:layout_height="wrap_content"
             android:divider="@drawable/main_card_divider"
             android:orientation="vertical"
-            android:showDividers="middle">
+            android:showDividers="middle|end">
 
             <include
                 android:id="@+id/about_hotel_layout"
@@ -28,12 +28,19 @@
 
     </ScrollView>
 
-    <com.google.android.material.button.MaterialButton
-        style="@style/CommonButton"
+    <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="16dp"
-        android:layout_marginVertical="12dp"
-        android:text="@string/choose_room" />
+        android:background="@color/white10">
+
+        <com.google.android.material.button.MaterialButton
+            style="@style/CommonButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginVertical="12dp"
+            android:text="@string/choose_room" />
+
+    </FrameLayout>
 
 </LinearLayout>
