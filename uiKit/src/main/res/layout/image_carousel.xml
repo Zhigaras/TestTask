@@ -13,6 +13,14 @@
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/tab_layout"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="17dp"
+        android:layout_gravity="bottom|center"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/tab_layout_bg"
+        app:tabBackground="@drawable/tab_indicator_inactive"
+        app:tabIndicator="@drawable/tab_indicator_active"
+        app:tabIndicatorColor="@color/black"
+        app:tabIndicatorGravity="stretch"
+        app:tabMaxWidth="15dp" />
 
 </com.zhigaras.uikit.ImageCarousel>
