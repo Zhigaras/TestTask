@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/common_card_bg"
+    android:paddingHorizontal="16dp"
+    android:paddingVertical="16dp">
+
+    <TextView
+        android:id="@+id/header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/hotel"
+        android:textAppearance="@style/RegularText18"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.zhigaras.uikit.RatingView
+        android:id="@+id/rating_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/rating_view_bg"
+        android:drawableStart="@drawable/baseline_star_24"
+        android:drawableTint="@color/yellow"
+        android:paddingHorizontal="10dp"
+        android:paddingVertical="5dp"
+        android:textAppearance="@style/RegularText16"
+        android:textColor="@color/yellow"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/header"
+        tools:text="Great" />
+
+    <TextView
+        android:id="@+id/hotel_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:textAppearance="@style/RegularText22"
+        app:layout_constraintTop_toBottomOf="@id/rating_text_view"
+        tools:text="Hotel name" />
+
+    <TextView
+        android:id="@+id/hotel_address"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:textAppearance="@style/AddressText"
+        app:layout_constraintTop_toBottomOf="@id/hotel_name"
+        tools:text="address" />
+
+    <TextView
+        android:id="@+id/price_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:textAppearance="@style/RegularText30"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/hotel_address"
+        tools:text="123 134 P" />
+
+    <TextView
+        android:id="@+id/price_unit_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:textAppearance="@style/PriceUnitText"
+        app:layout_constraintBaseline_toBaselineOf="@id/price_text_view"
+        app:layout_constraintStart_toEndOf="@id/price_text_view"
+        tools:text="за путевку" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

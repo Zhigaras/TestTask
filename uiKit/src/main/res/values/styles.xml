@@ -29,4 +29,12 @@
     <style name="RegularText30">
         <item name="android:textSize">30sp</item>
     </style>
+
+    <style name="AddressText" parent="RegularText14">
+        <item name="android:textColor">@color/blue</item>
+    </style>
+
+    <style name="PriceUnitText" parent="RegularText16">
+        <item name="android:textColor">@color/gray20</item>
+    </style>
 </resources>
