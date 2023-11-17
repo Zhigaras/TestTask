@@ -1,9 +1,8 @@
 package com.zhigaras.hotel.domain.model
 
 import com.zhigaras.cloudservice.model.hotel.HotelDetailsDto
+import com.zhigaras.core.formatPrice
 import com.zhigaras.hotel.ui.model.HotelDetailsUiModel
-import java.text.DecimalFormat
-import java.text.DecimalFormatSymbols
 
 class HotelDetailsDomainModel(dto: HotelDetailsDto) {
     private val address: String = dto.address
@@ -28,10 +27,4 @@ class HotelDetailsDomainModel(dto: HotelDetailsDto) {
         description = description,
         peculiarities = peculiarities
     )
-    
-    private fun Int.formatPrice(): String {
-        val formatSymbols = DecimalFormatSymbols()
-        formatSymbols.groupingSeparator = ' '
-        return DecimalFormat("###,###", formatSymbols).format(this)
-    }
 }

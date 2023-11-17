@@ -41,6 +41,7 @@
         tools:text="Подробнее о номере" />
 
     <include
+        android:id="@+id/price_view"
         layout="@layout/price_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

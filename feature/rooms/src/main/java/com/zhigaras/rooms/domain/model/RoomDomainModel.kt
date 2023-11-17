@@ -1,6 +1,7 @@
 package com.zhigaras.rooms.domain.model
 
 import com.zhigaras.cloudservice.model.rooms.RoomDto
+import com.zhigaras.core.formatPrice
 import com.zhigaras.rooms.ui.model.RoomUiModel
 
 class RoomDomainModel(dto: RoomDto) {
@@ -16,7 +17,7 @@ class RoomDomainModel(dto: RoomDto) {
         imageUrls = imageUrls,
         name = name,
         peculiarities = peculiarities,
-        price = price,
+        price = price.formatPrice(),
         priceUnit = pricePer
     )
 }
