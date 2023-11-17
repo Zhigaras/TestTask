@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="white10">#FFFFFF</color>
+    <color name="black">#000000</color>
+    <color name="blue">#0D72FF</color>
+    <color name="yellow">#FFC700</color>
+    <color name="yellow_20percent">#33FFC700</color>
+    <color name="gray10">#A9ABB7</color>
+    <color name="gray20">#828796</color>
+    <color name="gray20_15percent">#26828796</color>
+    <color name="white20">#FBFBFC</color>
+    <color name="white30">#F6F6F9</color>
+    <color name="red">#9F0000</color>
+</resources>

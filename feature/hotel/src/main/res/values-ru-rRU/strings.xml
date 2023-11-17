@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="choose_room">К выбору номера</string>
+    <string name="hotel">Отель</string>
+    <string name="details">Об отеле</string>
+    <string-array name="facilities">
+        <item>Удобства</item>
+        <item>Что включено</item>
+        <item>Что не включено</item>
+    </string-array>
+    <string name="all_the_necessary">Самое необходимое</string>
+    <string name="price_from">От %1$s ₽</string>
+</resources>

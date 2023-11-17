@@ -37,9 +37,14 @@ android {
 
 dependencies {
     
+    implementation(project(":core"))
+    implementation(project(":uiKit"))
+    implementation(project(":feature:hotel"))
+    
     implementation(Dependencies.coreKtx)
     implementation(Dependencies.appcompat)
     implementation(Dependencies.material)
+    implementation(Dependencies.koinAndroid)
     
     testImplementation(Dependencies.jUnit)
     androidTestImplementation(Dependencies.androidJUnit)

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="choose_room">Choose room</string>
+    <string name="hotel">Hotel</string>
+    <string name="details">Details</string>
+    <string-array name="facilities">
+        <item>Facilities</item>
+        <item>What`s included</item>
+        <item>What`s not included</item>
+    </string-array>
+    <string name="all_the_necessary">All the necessary</string>
+    <string name="price_from">From %1$s ₽</string>
+</resources>
