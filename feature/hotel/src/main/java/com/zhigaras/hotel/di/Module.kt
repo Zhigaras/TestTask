@@ -8,10 +8,11 @@ import com.zhigaras.hotel.domain.HotelRepository
 import org.koin.androidx.viewmodel.dsl.viewModelOf
 import org.koin.dsl.module
 import com.zhigaras.hotel.ui.HotelViewModel
+import com.zhigaras.rooms.di.roomsModule
 import org.koin.dsl.bind
 import org.koin.dsl.binds
 
-fun hotelModule() = listOf(cloudServiceModule()) + module {
+fun hotelModule() = listOf(cloudServiceModule()) + roomsModule() + module {
     
     viewModelOf(::HotelViewModel)
     

@@ -39,30 +39,30 @@
             android:background="@color/white10">
 
             <com.google.android.material.button.MaterialButton
+                android:id="@+id/to_room_choose_button"
                 style="@style/CommonButton"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="16dp"
                 android:layout_marginVertical="12dp"
-                android:text="@string/choose_room" />
+                android:text="@string/to_room_choose" />
 
         </FrameLayout>
 
     </LinearLayout>
 
-    <ProgressBar
+    <include
         android:id="@+id/progress_bar"
+        layout="@layout/common_progress_bar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:visibility="gone" />
+        android:layout_gravity="center" />
 
     <include
         android:id="@+id/connection_error"
         layout="@layout/connection_error_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:visibility="gone" />
+        android:layout_gravity="center" />
 
 </FrameLayout>

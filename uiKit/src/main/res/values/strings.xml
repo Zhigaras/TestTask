@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="retry">Retry</string>
+    <string name="from">From</string>
+    <string name="ruble_sign" translatable="false">₽</string>
 </resources>
