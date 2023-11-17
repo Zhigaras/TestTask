@@ -1,7 +1,7 @@
 package com.zhigaras.booking.ui.model
 
 import com.zhigaras.adapterdelegate.ListItem
-import com.zhigaras.uikit.databinding.HotelInfoLayoutBinding
+import com.zhigaras.booking.databinding.BookingHotelInfoBinding
 
 class HotelInfoUiModel(
     val id: Int,
@@ -24,9 +24,9 @@ class HotelInfoUiModel(
                 rating == other.rating
     }
     
-    fun bind(binding: HotelInfoLayoutBinding) {
-        binding.hotelName.text = hotelName
-        binding.hotelAddress.text = hotelAddress
-        binding.ratingTextView.text = rating
+    fun bind(binding: BookingHotelInfoBinding) = with(binding) {
+        hotelInfoLayout.hotelName.text = hotelName
+        hotelInfoLayout.hotelAddress.text = hotelAddress
+        hotelInfoLayout.ratingTextView.text = rating
     }
 }

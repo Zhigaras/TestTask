@@ -6,6 +6,7 @@ import android.view.View
 import com.zhigaras.adapterdelegate.CompositeAdapter
 import com.zhigaras.core.BaseFragment
 import com.zhigaras.rooms.databinding.FragmentRoomsBinding
+import com.zhigaras.uikit.MarginDecoration
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import com.zhigaras.uikit.R
 
