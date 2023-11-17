@@ -5,6 +5,7 @@ import android.util.AttributeSet
 import android.widget.FrameLayout
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.fragment.app.FragmentManager
 
 class NavBar @JvmOverloads constructor(
     context: Context,
@@ -12,11 +13,13 @@ class NavBar @JvmOverloads constructor(
     defStyleAttr: Int = 0
 ) : FrameLayout(context, attrs, defStyleAttr) {
     
-    fun setHeader(header: String) {
-        findViewById<TextView>(R.id.nav_bar_title).text = header
+    fun addBackNavigation(fragmentManager: FragmentManager) {
+        findViewById<ImageView>(R.id.back_button).setOnClickListener {
+            fragmentManager.popBackStack()
+        }
     }
     
-    fun setBackClickListener(listener: OnClickListener) {
-        findViewById<ImageView>(R.id.back_button).setOnClickListener(listener)
+    fun setHeader(header: String) {
+        findViewById<TextView>(R.id.nav_bar_title).text = header
     }
 }
