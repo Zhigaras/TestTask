@@ -14,7 +14,7 @@ interface HotelUiState : UiState<FragmentHotelBinding> {
     class Loading : HotelUiState {
         override fun update(binding: FragmentHotelBinding) = with(binding) {
             payload.visibility = View.GONE
-            progressBar.visibility = View.VISIBLE
+            progressBar.root.visibility = View.VISIBLE
             connectionError.root.visibility = View.GONE
         }
     }
@@ -24,7 +24,7 @@ interface HotelUiState : UiState<FragmentHotelBinding> {
             data.bindAboutHotel(aboutHotelLayout)
             data.bindHotelDetails(hotelDetailsLayout)
             payload.visibility = View.VISIBLE
-            progressBar.visibility = View.GONE
+            progressBar.root.visibility = View.GONE
             connectionError.root.visibility = View.GONE
         }
     }
@@ -35,7 +35,7 @@ interface HotelUiState : UiState<FragmentHotelBinding> {
             connectionError.errorTextView.text = message
             connectionError.root.visibility = View.VISIBLE
             payload.visibility = View.GONE
-            progressBar.visibility = View.GONE
+            progressBar.root.visibility = View.GONE
         }
     }
 }

@@ -29,6 +29,10 @@ class RoomsFragment : BaseFragment<FragmentRoomsBinding>() {
         binding.navBar.navBarTitle.text = arguments?.getString(HOTEL_NAME_KEY)
         binding.navBar.root.addBackNavigation(parentFragmentManager)
         
+        binding.connectionError.retryButton.setOnClickListener {
+            viewModel.fetchRooms()
+        }
+        
         viewModel.scopeCollect {
             it.update(binding)
         }

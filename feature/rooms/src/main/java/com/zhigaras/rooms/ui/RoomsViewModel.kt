@@ -12,6 +12,11 @@ class RoomsViewModel(
 ) : BaseViewModel<RoomsUiState>(dispatchers) {
     
     init {
+        fetchRooms()
+    }
+    
+    fun fetchRooms() {
+        flowWrapper.post(RoomsUiState.Loading())
         scopeLaunch(
             onBackground = { interactor.fetchRooms() },
             onUi = { it.handle(flowWrapper) }
