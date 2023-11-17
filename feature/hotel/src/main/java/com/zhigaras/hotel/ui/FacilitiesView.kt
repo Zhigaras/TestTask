@@ -27,6 +27,5 @@ class FacilitiesView @JvmOverloads constructor(
             it.bind(binding)
             addView(binding.root)
         }
-        // TODO: add divider
     }
 }
