@@ -1,6 +1,5 @@
 package com.zhigaras.hotel.ui.model
 
-import com.zhigaras.hotel.R
 import com.zhigaras.hotel.databinding.AboutHotelBinding
 import com.zhigaras.hotel.databinding.HotelDetailsBinding
 
@@ -17,9 +16,8 @@ class HotelDetailsUiModel(
 ) {
     
     fun bindAboutHotel(binding: AboutHotelBinding) = with(binding) {
-        priceTextView.text = binding.root.context.getString(R.string.price_from, minimalPrice)
         imageCarousel.root.setImages(imageUrls)
-        priceUnitTextView.text = priceUnit
+        priceView.root.setPrice(minimalPrice, priceUnit, true)
         hotelInfo.root.bind(name, address, rating)
     }
     
