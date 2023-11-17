@@ -27,7 +27,9 @@ class RoomsFragment : BaseFragment<FragmentRoomsBinding>() {
             addItemDecoration(MarginDecoration(resources.getDimensionPixelSize(R.dimen.main_card_dimen)))
         }
         binding.navBar.navBarTitle.text = arguments?.getString(HOTEL_NAME_KEY)
-        
+        binding.navBar.backButton.setOnClickListener {
+            parentFragmentManager.popBackStack()
+        }
         viewModel.scopeCollect {
             it.update(binding)
         }

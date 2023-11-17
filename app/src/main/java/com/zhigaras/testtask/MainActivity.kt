@@ -15,6 +15,6 @@ class MainActivity : AppCompatActivity() {
         navigation.setUpNavigation(supportFragmentManager, R.id.container)
         
         if (savedInstanceState == null)
-            navigation.goAndAddToBackStack(HotelFragment::class.java)
+            navigation.goTo(HotelFragment::class.java)
     }
 }

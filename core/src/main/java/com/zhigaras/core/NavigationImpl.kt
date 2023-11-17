@@ -14,6 +14,12 @@ class NavigationImpl : Navigation {
         this.container = container
     }
     
+    override fun goTo(fragment: Class<out BaseFragment<*>>, args: Bundle?) {
+        fragmentManager.beginTransaction()
+            .replace(container, fragment, args)
+            .commit()
+    }
+    
     override fun goAndAddToBackStack(fragment: Class<out BaseFragment<*>>, args: Bundle?) {
         fragmentManager.beginTransaction()
             .replace(container, fragment, args)

@@ -33,9 +33,10 @@
         android:layout_height="wrap_content"
         android:background="@drawable/room_details_button_bg"
         android:drawableEnd="@drawable/arrow_forward"
-        android:drawablePadding="2dp"
         android:drawableTint="@color/blue"
+        android:paddingVertical="2.5dp"
         android:paddingStart="10dp"
+        android:paddingEnd="2dp"
         android:text="@string/room_details"
         android:textAppearance="@style/RegularText16"
         android:textColor="@color/blue" />
