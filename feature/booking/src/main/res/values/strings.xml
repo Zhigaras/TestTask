@@ -2,4 +2,13 @@
 <resources>
     <string name="booking">Booking</string>
     <string name="pay">Pay %1$s ₽</string>
+    <string-array name="booking_info">
+        <item>Departure from</item>
+        <item>Country, city</item>
+        <item>Dates</item>
+        <item>Nights</item>
+        <item>Hotel</item>
+        <item>Suite</item>
+        <item>Meals</item>
+    </string-array>
 </resources>
