@@ -10,4 +10,16 @@ class BookingViewModel(
     override val flowWrapper: BookingFlowWrapper.Mutable,
     private val interactor: BookingInteractor
 ) : BaseViewModel<BookingUiState>(dispatchers) {
+    
+    init {
+        fetchBookingInfo()
+    }
+    
+    fun fetchBookingInfo() {
+        flowWrapper.post(BookingUiState.Loading())
+        scopeLaunch(
+            onBackground = { interactor.fetchBookingInfo() },
+            onUi = { it.handle(flowWrapper) }
+        )
+    }
 }

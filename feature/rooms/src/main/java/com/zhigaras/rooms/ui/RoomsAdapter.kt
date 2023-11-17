@@ -7,11 +7,16 @@ import com.zhigaras.adapterdelegate.DelegateViewHolder
 import com.zhigaras.rooms.databinding.RoomItemLayoutBinding
 import com.zhigaras.rooms.ui.model.RoomUiModel
 
-class RoomsAdapter : DelegateAdapter<RoomUiModel, RoomsAdapter.RoomsViewHolder>() {
+class RoomsAdapter(
+    private val onClick: () -> Unit
+) : DelegateAdapter<RoomUiModel, RoomsAdapter.RoomsViewHolder>() {
     
-    class RoomsViewHolder(private val binding: RoomItemLayoutBinding) :
+    inner class RoomsViewHolder(private val binding: RoomItemLayoutBinding) :
         DelegateViewHolder<RoomUiModel>(binding) {
-        override fun bind(item: RoomUiModel) = item.bind(binding)
+        override fun bind(item: RoomUiModel) {
+            item.bind(binding)
+            binding.toBookingButton.setOnClickListener { onClick.invoke() }
+        }
     }
     
     override fun viewType() = RoomUiModel::class.hashCode()

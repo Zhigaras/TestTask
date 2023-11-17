@@ -33,7 +33,7 @@ class BookingDomainModel(dto: BookingDto) {
         arrivalCountry = arrivalCountry,
         departure = departure,
         hotelName = hotelName,
-        numberOfNights = numberOfNights,
+        numberOfNights = numberOfNights.toString(),
         nutrition = nutrition,
         room = room,
         tourDates = "$tourDateStart-$tourDateStop"

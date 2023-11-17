@@ -3,8 +3,11 @@ package com.zhigaras.booking.ui
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
+import com.zhigaras.adapterdelegate.CompositeAdapter
 import com.zhigaras.booking.R
 import com.zhigaras.booking.databinding.FragmentBookingBinding
+import com.zhigaras.booking.ui.adapters.BookingInfoAdapter
+import com.zhigaras.booking.ui.adapters.HotelInfoAdapter
 import com.zhigaras.core.BaseFragment
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
@@ -18,7 +21,12 @@ class BookingFragment : BaseFragment<FragmentBookingBinding>() {
         super.onViewCreated(view, savedInstanceState)
         
         binding.navBar.root.setHeader(getString(R.string.booking))
+        val adapter = CompositeAdapter.Builder()
+            .addAdapter(HotelInfoAdapter())
+            .addAdapter(BookingInfoAdapter())
+            .build()
         
+        binding.bookingRecyclerView.adapter = adapter
         viewModel.scopeCollect {
             it.update(binding)
         }

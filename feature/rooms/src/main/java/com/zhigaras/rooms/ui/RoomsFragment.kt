@@ -19,7 +19,7 @@ class RoomsFragment : BaseFragment<FragmentRoomsBinding>() {
         super.onViewCreated(view, savedInstanceState)
         
         val adapter = CompositeAdapter.Builder()
-            .addAdapter(RoomsAdapter())
+            .addAdapter(RoomsAdapter { viewModel.navigateToBooking() })
             .build()
         
         binding.roomsRecyclerView.apply {
