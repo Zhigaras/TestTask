@@ -17,6 +17,6 @@ class RoomsAdapter : DelegateAdapter<RoomUiModel, RoomsAdapter.RoomsViewHolder>(
     override fun viewType() = RoomUiModel::class.hashCode() // TODO: check
     
     override fun createViewHolder(parent: ViewGroup) = RoomsViewHolder(
-        RoomItemLayoutBinding.inflate(LayoutInflater.from(parent.context))
+        RoomItemLayoutBinding.inflate(LayoutInflater.from(parent.context), parent, false)
     )
 }

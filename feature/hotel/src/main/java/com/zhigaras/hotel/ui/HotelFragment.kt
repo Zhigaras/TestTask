@@ -20,6 +20,10 @@ class HotelFragment : BaseFragment<FragmentHotelBinding>() {
             viewModel.fetchHotelInfo()
         }
         
+        binding.toRoomChooseButton.setOnClickListener {
+            viewModel.navigateToRoomChoosing()
+        }
+        
         viewModel.scopeCollect {
             it.update(binding)
         }
