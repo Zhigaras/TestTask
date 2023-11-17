@@ -8,11 +8,15 @@ import com.zhigaras.hotel.domain.HotelUiState
 
 class HotelViewModel(
     dispatchers: Dispatchers,
-    flowWrapper: HotelFlowWrapper.Mutable,
+    override val flowWrapper: HotelFlowWrapper.Mutable,
     private val interactor: HotelInteractor
-) : BaseViewModel<HotelUiState>(dispatchers, flowWrapper) {
+) : BaseViewModel<HotelUiState>(dispatchers) {
     
     init {
+        fetchHotelInfo()
+    }
+    
+    fun fetchHotelInfo() {
         flowWrapper.post(HotelUiState.Loading())
         scopeLaunch(
             onBackground = { interactor.fetchHotelInfo() },

@@ -8,9 +8,9 @@ import kotlinx.coroutines.withContext
 
 abstract class BaseViewModel<T : UiState<*>>(
     private val dispatchers: Dispatchers,
-    protected val flowWrapper: FlowWrapper.Mutable<T>
 ) : ViewModel(), FlowWrapper.Collect<T> {
     
+    protected abstract val flowWrapper: FlowWrapper.Mutable<T>
     
     override suspend fun collect(collector: FlowCollector<T>) {
         flowWrapper.collect(collector)

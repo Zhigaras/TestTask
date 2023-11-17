@@ -6,17 +6,16 @@ import com.zhigaras.cloudservice.model.rooms.RoomsInfoDto
 
 internal class HotelsCloudServiceImpl(private val hotelsApi: HotelsApi) : HotelsCloudService {
     
-    @Throws
+    //exception handling occurs at a higher level in Interactors
+    
     override suspend fun getHotelInfo(): HotelDetailsDto {
         return hotelsApi.getHotelInfo().body()!!
     }
     
-    @Throws
     override suspend fun getRoomsInfo(): RoomsInfoDto {
         return hotelsApi.getRoomsInfo().body()!!
     }
     
-    @Throws
     override suspend fun getBookingInfo(): BookingDto {
         return hotelsApi.getBookingInfo().body()!!
     }

@@ -16,6 +16,10 @@ class HotelFragment : BaseFragment<FragmentHotelBinding>() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         
+        binding.connectionError.retryButton.setOnClickListener {
+            viewModel.fetchHotelInfo()
+        }
+        
         viewModel.scopeCollect {
             it.update(binding)
         }
