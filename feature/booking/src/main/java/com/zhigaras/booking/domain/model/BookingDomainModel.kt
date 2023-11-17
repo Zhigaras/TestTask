@@ -36,7 +36,7 @@ class BookingDomainModel(dto: BookingDto) {
         numberOfNights = numberOfNights.toString(),
         nutrition = nutrition,
         room = room,
-        tourDates = "$tourDateStart-$tourDateStop"
+        tourDates = "$tourDateStart - $tourDateStop"
     )
     
     fun toUi() = listOf(makeHotelInfo(), makeBookingInfo())

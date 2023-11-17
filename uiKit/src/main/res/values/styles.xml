@@ -48,6 +48,10 @@
         <item name="fontWeight">400</item>
     </style>
 
+    <style name="BookingInfoItemText" parent="DescriptionText">
+        <item name="android:textColor">@color/gray20</item>
+    </style>
+
     <style name="FacilitiesBottomText" parent="RegularText14">
         <item name="android:textColor">@color/gray20</item>
     </style>
