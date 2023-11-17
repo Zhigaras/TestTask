@@ -1,24 +1,43 @@
 package com.zhigaras.booking.domain.model
 
-import com.zhigaras.booking.ui.BookingUiModel
+import com.zhigaras.booking.ui.model.BookingInfoUiModel
+import com.zhigaras.booking.ui.model.HotelInfoUiModel
 import com.zhigaras.cloudservice.model.booking.BookingDto
 
 class BookingDomainModel(dto: BookingDto) {
-    val arrivalCountry: String = dto.arrivalCountry
-    val departure: String = dto.departure
-    val fuelCharge: Int = dto.fuelCharge
-    val rating: Int = dto.rating
-    val hotelAddress: String = dto.hotelAddress
-    val hotelName: String = dto.hotelName
-    val id: Int = dto.id
-    val numberOfNights: Int = dto.numberOfNights
-    val nutrition: String = dto.nutrition
-    val ratingName: String = dto.ratingName
-    val room: String = dto.room
-    val serviceCharge: Int = dto.serviceCharge
-    val tourDateStart: String = dto.tourDateStart
-    val tourDateStop: String = dto.tourDateStop
-    val tourPrice: Int = dto.tourPrice
+    private val arrivalCountry: String = dto.arrivalCountry
+    private val departure: String = dto.departure
+    private val fuelCharge: Int = dto.fuelCharge
+    private val rating: Int = dto.rating
+    private val hotelAddress: String = dto.hotelAddress
+    private val hotelName: String = dto.hotelName
+    private val id: Int = dto.id
+    private val numberOfNights: Int = dto.numberOfNights
+    private val nutrition: String = dto.nutrition
+    private val ratingName: String = dto.ratingName
+    private val room: String = dto.room
+    private val serviceCharge: Int = dto.serviceCharge
+    private val tourDateStart: String = dto.tourDateStart
+    private val tourDateStop: String = dto.tourDateStop
+    private val tourPrice: Int = dto.tourPrice
     
-    fun toUiModel() = BookingUiModel()
+    fun makeHotelInfo() = HotelInfoUiModel(
+        id = id,
+        hotelName = hotelName,
+        hotelAddress = hotelAddress,
+        rating = "$rating $ratingName"
+    )
+    
+    fun makeBookingInfo() = BookingInfoUiModel(
+        id = id,
+        arrivalCountry = arrivalCountry,
+        departure = departure,
+        hotelName = hotelName,
+        numberOfNights = numberOfNights,
+        nutrition = nutrition,
+        room = room,
+        tourDates = "$tourDateStart-$tourDateStop"
+    )
+    
+    fun toUi() = listOf(makeHotelInfo(), makeBookingInfo())
 }

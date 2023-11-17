@@ -10,7 +10,7 @@ interface FetchResult {
     class Success(private val data: BookingDomainModel) : FetchResult {
         
         override fun handle(flowWrapper: BookingFlowWrapper.Post) {
-            flowWrapper.post(BookingUiState.Success(data.toUiModel()))
+            flowWrapper.post(BookingUiState.Success(data.toUi()))
         }
     }
     
