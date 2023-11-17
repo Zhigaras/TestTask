@@ -38,6 +38,7 @@ dependencies {
     implementation(project(":core"))
     implementation(project(":uiKit"))
     implementation(project(":cloudService"))
+    implementation(project(":feature:rooms"))
     
     implementation(Dependencies.coreKtx)
     implementation(Dependencies.appcompat)
