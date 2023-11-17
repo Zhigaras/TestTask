@@ -22,9 +22,14 @@ class RoomsFragment : BaseFragment<FragmentRoomsBinding>() {
             .build()
         
         binding.roomsRecyclerView.adapter = adapter
+        binding.navBar.navBarTitle.text = arguments?.getString(HOTEL_NAME_KEY)
         
         viewModel.scopeCollect {
             it.update(binding)
         }
+    }
+    
+    companion object {
+        const val HOTEL_NAME_KEY = "hotelNameKey"
     }
 }
