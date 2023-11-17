@@ -26,7 +26,7 @@ class RoomsFragment : BaseFragment<FragmentRoomsBinding>() {
             this.adapter = adapter
             addItemDecoration(MarginDecoration(resources.getDimensionPixelSize(R.dimen.main_card_dimen)))
         }
-        binding.navBar.navBarTitle.text = arguments?.getString(HOTEL_NAME_KEY)
+        arguments?.getString(HOTEL_NAME_KEY)?.let { binding.navBar.root.setHeader(it) }
         binding.navBar.root.addBackNavigation(parentFragmentManager)
         
         binding.connectionError.retryButton.setOnClickListener {
