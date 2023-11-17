@@ -1,5 +1,6 @@
 package com.zhigaras.rooms.di
 
+import com.zhigaras.booking.di.bookingModule
 import com.zhigaras.rooms.data.RoomsRepositoryImpl
 import com.zhigaras.rooms.domain.RoomsFlowWrapper
 import com.zhigaras.rooms.domain.RoomsInteractor
@@ -10,7 +11,7 @@ import com.zhigaras.rooms.ui.RoomsViewModel
 import org.koin.dsl.bind
 import org.koin.dsl.binds
 
-fun roomsModule() = module {
+fun roomsModule() = listOf(bookingModule()) + module {
     
     viewModelOf(::RoomsViewModel)
     
