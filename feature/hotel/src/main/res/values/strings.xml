@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="choose_room">Choose room</string>
+    <string name="to_room_choose">To room choose</string>
     <string name="hotel">Hotel</string>
     <string name="details">Details</string>
     <string-array name="facilities">
