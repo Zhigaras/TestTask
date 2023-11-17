@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="choose_room">Выбрать номер</string>
+    <string name="room_details">Подробнее о номере</string>
 </resources>

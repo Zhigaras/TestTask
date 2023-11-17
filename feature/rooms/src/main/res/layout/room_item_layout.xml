@@ -36,9 +36,9 @@
         android:drawablePadding="2dp"
         android:drawableTint="@color/blue"
         android:paddingStart="10dp"
+        android:text="@string/room_details"
         android:textAppearance="@style/RegularText16"
-        android:textColor="@color/blue"
-        tools:text="Подробнее о номере" />
+        android:textColor="@color/blue" />
 
     <include
         android:id="@+id/price_view"
