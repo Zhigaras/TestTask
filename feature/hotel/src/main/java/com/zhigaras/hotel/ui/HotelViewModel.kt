@@ -4,7 +4,6 @@ import com.zhigaras.core.BaseViewModel
 import com.zhigaras.core.Dispatchers
 import com.zhigaras.hotel.domain.HotelFlowWrapper
 import com.zhigaras.hotel.domain.HotelInteractor
-import com.zhigaras.hotel.domain.HotelUiState
 
 class HotelViewModel(
     dispatchers: Dispatchers,

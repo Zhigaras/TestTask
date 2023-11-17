@@ -1,6 +1,7 @@
 package com.zhigaras.hotel.domain
 
 import com.zhigaras.core.FlowWrapper
+import com.zhigaras.hotel.ui.HotelUiState
 
 interface HotelFlowWrapper {
     

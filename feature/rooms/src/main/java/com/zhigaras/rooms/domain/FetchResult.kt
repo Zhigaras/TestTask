@@ -1,6 +1,7 @@
 package com.zhigaras.rooms.domain
 
 import com.zhigaras.rooms.domain.model.RoomDomainModel
+import com.zhigaras.rooms.ui.RoomsUiState
 
 interface FetchResult {
     

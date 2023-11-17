@@ -4,7 +4,6 @@ import com.zhigaras.core.BaseViewModel
 import com.zhigaras.core.Dispatchers
 import com.zhigaras.rooms.domain.RoomsFlowWrapper
 import com.zhigaras.rooms.domain.RoomsInteractor
-import com.zhigaras.rooms.domain.RoomsUiState
 
 class RoomsViewModel(
     dispatchers: Dispatchers,

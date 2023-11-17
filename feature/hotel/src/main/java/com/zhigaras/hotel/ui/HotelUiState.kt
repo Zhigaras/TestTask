@@ -1,4 +1,4 @@
-package com.zhigaras.hotel.domain
+package com.zhigaras.hotel.ui
 
 import android.view.View
 import com.zhigaras.core.UiState

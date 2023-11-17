@@ -1,5 +1,6 @@
-package com.zhigaras.rooms.domain
+package com.zhigaras.rooms.ui
 
+import com.zhigaras.adapterdelegate.CompositeAdapter
 import com.zhigaras.core.UiState
 import com.zhigaras.rooms.databinding.FragmentRoomsBinding
 import com.zhigaras.rooms.ui.model.RoomUiModel
@@ -20,7 +21,7 @@ interface RoomsUiState : UiState<FragmentRoomsBinding> {
     class Success(private val rooms: List<RoomUiModel>) : RoomsUiState {
         
         override fun update(binding: FragmentRoomsBinding) {
-        
+            (binding.roomsRecyclerView.adapter as CompositeAdapter).submitList(rooms)
         }
     }
     

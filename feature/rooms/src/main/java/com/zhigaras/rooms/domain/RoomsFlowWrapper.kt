@@ -1,6 +1,7 @@
 package com.zhigaras.rooms.domain
 
 import com.zhigaras.core.FlowWrapper
+import com.zhigaras.rooms.ui.RoomsUiState
 
 interface RoomsFlowWrapper {
     
