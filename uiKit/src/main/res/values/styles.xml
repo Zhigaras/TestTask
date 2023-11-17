@@ -44,6 +44,10 @@
         <item name="android:textColor">@color/gray20</item>
     </style>
 
+    <style name="BuyerInfoBottomText" parent="PriceUnitText">
+        <item name="android:textSize">14sp</item>
+    </style>
+
     <style name="DescriptionText" parent="RegularText16">
         <item name="fontWeight">400</item>
     </style>

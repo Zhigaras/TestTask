@@ -11,4 +11,6 @@
         <item>Suite</item>
         <item>Meals</item>
     </string-array>
+    <string name="buyer_info">Buyer information</string>
+    <string name="buyer_info_bottom_text">This data is not shared with anyone. After payment, we sent a check to the number and email you specified</string>
 </resources>
