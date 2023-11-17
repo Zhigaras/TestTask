@@ -4,5 +4,8 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
+    <include
+        android:id="@+id/nav_bar"
+        layout="@layout/nav_bar" />
 
 </LinearLayout>
