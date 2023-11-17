@@ -13,7 +13,7 @@
         android:text="@string/details"
         android:textAppearance="@style/RegularText22" />
 
-    <com.google.android.material.chip.ChipGroup
+    <com.zhigaras.uikit.PeculiaritiesChipGroup
         android:id="@+id/peculiarities_chip_group"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
