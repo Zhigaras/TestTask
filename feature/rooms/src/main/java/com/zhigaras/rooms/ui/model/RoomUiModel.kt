@@ -12,7 +12,7 @@ class RoomUiModel(
     private val priceUnit: String,
 ) : ListItem {
     
-    override fun itemType() = this::class.hashCode() // TODO: check
+    override fun itemType() = this::class.hashCode()
     
     override fun areItemTheSame(other: ListItem): Boolean {
         if (other !is RoomUiModel) return false
