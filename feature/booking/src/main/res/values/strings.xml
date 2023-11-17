@@ -13,4 +13,14 @@
     </string-array>
     <string name="buyer_info">Buyer information</string>
     <string name="buyer_info_bottom_text">This data is not shared with anyone. After payment, we sent a check to the number and email you specified</string>
+    <string name="phone_number">Phone number</string>
+    <string name="email">Email</string>
+    <string-array name="tourist_info">
+        <item>First name</item>
+        <item>Last name</item>
+        <item>Date of birth</item>
+        <item>Citizenship</item>
+        <item>Passport number</item>
+        <item>Passport validity period</item>
+    </string-array>
 </resources>

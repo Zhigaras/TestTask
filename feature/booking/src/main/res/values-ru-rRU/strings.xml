@@ -13,4 +13,14 @@
     </string-array>
     <string name="buyer_info">Информация о покупателе</string>
     <string name="buyer_info_bottom_text">Эти данные никому не передаются. После оплаты мы вышли чек на указанный вами номер и почту</string>
+    <string name="phone_number">Номер телефона</string>
+    <string name="email">Почта</string>
+    <string-array name="tourist_info">
+        <item>Имя</item>
+        <item>Фамилия</item>
+        <item>Дата рождения</item>
+        <item>Гражданство</item>
+        <item>Номер загранпаспорта</item>
+        <item>Срок действия загранпаспорта</item>
+    </string-array>
 </resources>

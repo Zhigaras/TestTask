@@ -1,6 +1,7 @@
 package com.zhigaras.booking.domain.model
 
 import com.zhigaras.booking.ui.model.BookingInfoUiModel
+import com.zhigaras.booking.ui.model.BuyerInfo
 import com.zhigaras.booking.ui.model.HotelInfoUiModel
 import com.zhigaras.cloudservice.model.booking.BookingDto
 
@@ -39,5 +40,5 @@ class BookingDomainModel(dto: BookingDto) {
         tourDates = "$tourDateStart - $tourDateStop"
     )
     
-    fun toUi() = listOf(makeHotelInfo(), makeBookingInfo())
+    fun toUi() = listOf(makeHotelInfo(), makeBookingInfo(), BuyerInfo())
 }

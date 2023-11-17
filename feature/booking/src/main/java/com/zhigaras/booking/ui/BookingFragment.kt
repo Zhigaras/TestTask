@@ -7,6 +7,7 @@ import com.zhigaras.adapterdelegate.CompositeAdapter
 import com.zhigaras.booking.R
 import com.zhigaras.booking.databinding.FragmentBookingBinding
 import com.zhigaras.booking.ui.adapters.BookingInfoAdapter
+import com.zhigaras.booking.ui.adapters.BuyerInfoAdapter
 import com.zhigaras.booking.ui.adapters.HotelInfoAdapter
 import com.zhigaras.core.BaseFragment
 import com.zhigaras.uikit.MarginDecoration
@@ -25,6 +26,7 @@ class BookingFragment : BaseFragment<FragmentBookingBinding>() {
         val adapter = CompositeAdapter.Builder()
             .addAdapter(HotelInfoAdapter())
             .addAdapter(BookingInfoAdapter())
+            .addAdapter(BuyerInfoAdapter())
             .build()
         
         binding.bookingRecyclerView.apply {
