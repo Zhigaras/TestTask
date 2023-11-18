@@ -6,6 +6,7 @@ import android.view.View
 import com.zhigaras.adapterdelegate.CompositeAdapter
 import com.zhigaras.booking.R
 import com.zhigaras.booking.databinding.FragmentBookingBinding
+import com.zhigaras.booking.ui.adapters.AddTouristAdapter
 import com.zhigaras.booking.ui.adapters.BookingInfoAdapter
 import com.zhigaras.booking.ui.adapters.BuyerInfoAdapter
 import com.zhigaras.booking.ui.adapters.HotelInfoAdapter
@@ -29,6 +30,7 @@ class BookingFragment : BaseFragment<FragmentBookingBinding>() {
             .addAdapter(BookingInfoAdapter())
             .addAdapter(BuyerInfoAdapter())
             .addAdapter(TouristInfoAdapter())
+            .addAdapter(AddTouristAdapter())
             .build()
         
         binding.bookingRecyclerView.apply {

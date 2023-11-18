@@ -1,5 +1,6 @@
 package com.zhigaras.booking.domain.model
 
+import com.zhigaras.booking.ui.model.AddTouristUiModel
 import com.zhigaras.booking.ui.model.BookingInfoUiModel
 import com.zhigaras.booking.ui.model.BuyerInfo
 import com.zhigaras.booking.ui.model.HotelInfoUiModel
@@ -46,6 +47,7 @@ class BookingDomainModel(dto: BookingDto) {
         makeBookingInfo(),
         BuyerInfo(),
         TouristInfo(1, true),
-        TouristInfo(2)
+        TouristInfo(2),
+        AddTouristUiModel()
     )
 }
