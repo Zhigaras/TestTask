@@ -33,7 +33,7 @@ interface BookingUiState : UiState<FragmentBookingBinding> {
         override fun update(binding: FragmentBookingBinding) = with(binding) {
             (bookingRecyclerView.adapter as CompositeAdapter).submitList(data)
             (data.findLast { it is TourPriceUiModel } as TourPriceUiModel)
-                .bindPayButton(binding.payButton)
+                .bindPayButton(binding.bottomButton.button)
             progressBar.root.visibility = View.GONE
             connectionError.root.visibility = View.GONE
             payload.visibility = View.VISIBLE

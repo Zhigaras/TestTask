@@ -16,10 +16,8 @@ class OrderedFragment : BaseFragment<FragmentOrderedBinding>() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         
-        binding.navBar.root.addBackNavigation(parentFragmentManager)
+        binding.navBar.backButton.setOnClickListener { viewModel.goToStartScreen() }
         binding.navBar.navBarTitle.setText(R.string.order_has_been_paid)
-        binding.bottomButton.button.setOnClickListener {
-        
-        }
+        binding.bottomButton.button.setOnClickListener { viewModel.goToStartScreen() }
     }
 }

@@ -40,6 +40,7 @@ class BookingFragment : BaseFragment<FragmentBookingBinding>() {
             this.adapter = adapter
             addItemDecoration(MarginDecoration(resources.getDimensionPixelSize(com.zhigaras.uikit.R.dimen.main_card_dimen)))
         }
+        binding.bottomButton.button.setOnClickListener { viewModel.goToOrdered() }
         binding.connectionError.retryButton.setOnClickListener { viewModel.fetchBookingInfo() }
         viewModel.scopeCollect {
             it.update(binding)

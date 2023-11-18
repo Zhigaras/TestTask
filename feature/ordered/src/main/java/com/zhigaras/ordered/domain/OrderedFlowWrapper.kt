@@ -8,5 +8,5 @@ interface OrderedFlowWrapper {
     interface Post : FlowWrapper.Post<OrderedUiState>
     interface Collect : FlowWrapper.Collect<OrderedUiState>
     interface Mutable : FlowWrapper.Mutable<OrderedUiState>, Post, Collect
-    class Base : FlowWrapper.Base<OrderedUiState>(OrderedUiState.Initial())
+    class Base : FlowWrapper.Base<OrderedUiState>(OrderedUiState.Initial()), Mutable
 }

@@ -11,5 +11,6 @@ class OrderedViewModel(
     private val navigation: Navigation
 ) : BaseViewModel<OrderedUiState>(dispatchers) {
     
-
+    fun goToStartScreen() = navigation.goToStart()
+    
 }
