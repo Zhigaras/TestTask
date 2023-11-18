@@ -2,10 +2,14 @@ package com.zhigaras.booking.ui
 
 import android.content.Context
 import android.util.AttributeSet
-import android.view.LayoutInflater
+import android.widget.ImageView
 import android.widget.LinearLayout
+import androidx.core.view.isVisible
+import androidx.lifecycle.findViewTreeLifecycleOwner
+import androidx.lifecycle.lifecycleScope
 import com.zhigaras.booking.R
-import com.zhigaras.booking.databinding.TouristInfoHeaderBinding
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.launch
 
 class TouristInfoView @JvmOverloads constructor(
     context: Context,
@@ -13,16 +17,20 @@ class TouristInfoView @JvmOverloads constructor(
     defStyleAttr: Int = 0
 ) : LinearLayout(context, attrs, defStyleAttr) {
     
-    private val hints = resources.getStringArray(R.array.tourist_info)
-    private val headerBinding =
-        TouristInfoHeaderBinding.inflate(LayoutInflater.from(context), this, false)
+    private val expandedFlow = MutableStateFlow(false)
+    private val expandButton by lazy { findViewById<ImageView>(R.id.expand_button) }
+    private val viewToHide by lazy { findViewById<LinearLayout>(R.id.view_to_hide) }
     
-    init {
-        addView(headerBinding.root)
-        hints.forEach {
-            val inputView = LayoutInflater.from(context).inflate(R.layout.input_layout, this, false)
-            (inputView as BuyerInfoInput).hint = it
-            addView(inputView)
+    override fun onAttachedToWindow() {
+        super.onAttachedToWindow()
+        expandButton.setOnClickListener {
+            expandedFlow.value = !expandedFlow.value
+        }
+        
+        findViewTreeLifecycleOwner()?.lifecycleScope?.launch {
+            expandedFlow.collect {
+                viewToHide.isVisible = it
+            }
         }
     }
 }
