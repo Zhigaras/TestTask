@@ -1,5 +1,6 @@
 package com.zhigaras.booking.ui.model
 
+import com.google.android.material.button.MaterialButton
 import com.zhigaras.adapterdelegate.ListItem
 import com.zhigaras.booking.databinding.TourPriceLayoutBinding
 import com.zhigaras.uikit.R
@@ -27,5 +28,9 @@ data class TourPriceUiModel(
         fuelChargeValue.text = root.context.getString(R.string.price_exact, fuelCharge)
         serviceChargeValue.text = root.context.getString(R.string.price_exact, serviceCharge)
         totalPriceValue.text = root.context.getString(R.string.price_exact, totalPrice)
+    }
+    
+    fun bindPayButton(button: MaterialButton) = with(button) {
+        text = context.getString(com.zhigaras.booking.R.string.pay_button_text, totalPrice)
     }
 }

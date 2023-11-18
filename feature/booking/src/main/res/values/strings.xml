@@ -28,4 +28,5 @@
         <item>Passport number</item>
         <item>Passport validity period</item>
     </string-array>
+    <string name="pay_button_text">Pay %1$s ₽</string>
 </resources>

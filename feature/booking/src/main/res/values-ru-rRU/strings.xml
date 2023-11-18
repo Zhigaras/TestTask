@@ -28,4 +28,5 @@
         <item>Номер загранпаспорта</item>
         <item>Срок действия загранпаспорта</item>
     </string-array>
+    <string name="pay_button_text">Оплатить %1$s ₽</string>
 </resources>

@@ -3,6 +3,7 @@ package com.zhigaras.booking.ui
 import com.zhigaras.adapterdelegate.CompositeAdapter
 import com.zhigaras.adapterdelegate.ListItem
 import com.zhigaras.booking.databinding.FragmentBookingBinding
+import com.zhigaras.booking.ui.model.TourPriceUiModel
 import com.zhigaras.core.UiState
 
 interface BookingUiState : UiState<FragmentBookingBinding> {
@@ -21,8 +22,10 @@ interface BookingUiState : UiState<FragmentBookingBinding> {
     
     class Success(private val data: List<ListItem>) : BookingUiState {
         
-        override fun update(binding: FragmentBookingBinding) {
-            (binding.bookingRecyclerView.adapter as CompositeAdapter).submitList(data)
+        override fun update(binding: FragmentBookingBinding) = with(binding) {
+            (bookingRecyclerView.adapter as CompositeAdapter).submitList(data)
+            (data.findLast { it is TourPriceUiModel } as TourPriceUiModel)
+                .bindPayButton(binding.payButton)
         }
     }
     
