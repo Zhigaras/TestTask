@@ -39,6 +39,7 @@ dependencies {
     implementation(project(":uiKit"))
     implementation(project(":cloudService"))
     implementation(project(":adapterDelegate"))
+    implementation(project(":feature:ordered"))
     
     implementation(Dependencies.coreKtx)
     implementation(Dependencies.appcompat)
