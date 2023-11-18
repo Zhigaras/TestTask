@@ -9,12 +9,16 @@ import com.zhigaras.core.UiState
 
 interface BookingUiState : UiState<FragmentBookingBinding> {
     
+    fun updateData(action: (List<ListItem>) -> List<ListItem>): BookingUiState
+    
     class Initial : BookingUiState {
+        override fun updateData(action: (List<ListItem>) -> List<ListItem>) = this
         
         override fun update(binding: FragmentBookingBinding) = Unit
     }
     
     class Loading : BookingUiState {
+        override fun updateData(action: (List<ListItem>) -> List<ListItem>) = this
         
         override fun update(binding: FragmentBookingBinding) = with(binding) {
             progressBar.root.visibility = View.VISIBLE
@@ -34,6 +38,10 @@ interface BookingUiState : UiState<FragmentBookingBinding> {
             connectionError.root.visibility = View.GONE
             payload.visibility = View.VISIBLE
         }
+        
+        override fun updateData(action: (List<ListItem>) -> List<ListItem>): BookingUiState {
+            return Success(action.invoke(data))
+        }
     }
     
     class Error(private val message: String) : BookingUiState {
@@ -44,5 +52,7 @@ interface BookingUiState : UiState<FragmentBookingBinding> {
             connectionError.root.visibility = View.VISIBLE
             payload.visibility = View.GONE
         }
+        
+        override fun updateData(action: (List<ListItem>) -> List<ListItem>) = this
     }
 }

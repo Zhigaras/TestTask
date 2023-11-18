@@ -2,6 +2,7 @@ package com.zhigaras.booking.ui
 
 import com.zhigaras.booking.domain.BookingFlowWrapper
 import com.zhigaras.booking.domain.BookingInteractor
+import com.zhigaras.booking.ui.model.TouristInfoUiModel
 import com.zhigaras.core.BaseViewModel
 import com.zhigaras.core.Dispatchers
 
@@ -24,6 +25,14 @@ class BookingViewModel(
     }
     
     fun addNewTourist() {
-    
+        flowWrapper.update {
+            it.updateData { list ->
+                val lastTourist = list.last { it is TouristInfoUiModel } as TouristInfoUiModel
+                val lastTouristIndex = list.indexOf(lastTourist)
+                list.toMutableList().apply {
+                    add(lastTouristIndex + 1, TouristInfoUiModel(lastTourist.nextId()))
+                }
+            }
+        }
     }
 }

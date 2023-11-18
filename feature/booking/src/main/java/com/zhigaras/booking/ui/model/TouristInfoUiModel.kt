@@ -22,4 +22,6 @@ class TouristInfoUiModel(
         if (other !is TouristInfoUiModel) return false
         return false // TODO: fix
     }
+    
+    fun nextId() = id + 1
 }
