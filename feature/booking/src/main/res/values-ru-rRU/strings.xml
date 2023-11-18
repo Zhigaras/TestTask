@@ -12,7 +12,7 @@
         <item>Питание</item>
     </string-array>
     <string name="buyer_info">Информация о покупателе</string>
-    <string name="buyer_info_bottom_text">Эти данные никому не передаются. После оплаты мы вышли чек на указанный вами номер и почту</string>
+    <string name="buyer_info_bottom_text">Эти данные никому не передаются. После оплаты мы вышлем чек на указанный вами номер и почту</string>
     <string name="phone_number">Номер телефона</string>
     <string name="email">Почта</string>
     <string-array name="tourist_info">
