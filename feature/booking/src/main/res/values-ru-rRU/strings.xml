@@ -15,6 +15,7 @@
     <string name="buyer_info_bottom_text">Эти данные никому не передаются. После оплаты мы вышлем чек на указанный вами номер и почту</string>
     <string name="phone_number">Номер телефона</string>
     <string name="email">Почта</string>
+    <string name="add_tourist">Добавить туриста</string>
     <string-array name="tourist_info">
         <item>Имя</item>
         <item>Фамилия</item>
