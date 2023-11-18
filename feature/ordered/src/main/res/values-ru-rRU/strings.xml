@@ -3,4 +3,5 @@
     <string name="order_processed">Ваш заказ принят в работу</string>
     <string name="order_confirmation">Подтверждение заказа №104893 может занять некоторое время (от 1 часа до суток). Как только мы получим ответ от туроператора, вам на почту придет уведомление.</string>
     <string name="order_has_been_paid">Заказ оплачен</string>
+    <string name="super_text">Супер!</string>
 </resources>
