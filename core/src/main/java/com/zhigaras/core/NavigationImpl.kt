@@ -26,4 +26,11 @@ class NavigationImpl : Navigation {
             .addToBackStack(fragment.simpleName)
             .commit()
     }
+    
+    override fun goToStart() {
+        if (fragmentManager.backStackEntryCount > 0) {
+            val first = fragmentManager.getBackStackEntryAt(0)
+            fragmentManager.popBackStack(first.id, FragmentManager.POP_BACK_STACK_INCLUSIVE)
+        }
+    }
 }

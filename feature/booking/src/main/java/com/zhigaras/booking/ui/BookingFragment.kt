@@ -25,6 +25,7 @@ class BookingFragment : BaseFragment<FragmentBookingBinding>() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         
+        binding.navBar.root.addBackNavigation(parentFragmentManager)
         binding.navBar.root.setHeader(getString(R.string.booking))
         val adapter = CompositeAdapter.Builder()
             .addAdapter(HotelInfoAdapter())
@@ -39,6 +40,7 @@ class BookingFragment : BaseFragment<FragmentBookingBinding>() {
             this.adapter = adapter
             addItemDecoration(MarginDecoration(resources.getDimensionPixelSize(com.zhigaras.uikit.R.dimen.main_card_dimen)))
         }
+        binding.bottomButton.button.setOnClickListener { viewModel.goToOrdered() }
         binding.connectionError.retryButton.setOnClickListener { viewModel.fetchBookingInfo() }
         viewModel.scopeCollect {
             it.update(binding)

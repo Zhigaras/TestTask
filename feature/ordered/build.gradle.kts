@@ -4,7 +4,7 @@ plugins {
 }
 
 android {
-    namespace = "com.zhigaras.booking"
+    namespace = "com.zhigaras.ordered"
     compileSdk = Config.compileSdk
     
     defaultConfig {
@@ -37,13 +37,9 @@ dependencies {
     
     implementation(project(":core"))
     implementation(project(":uiKit"))
-    implementation(project(":cloudService"))
-    implementation(project(":adapterDelegate"))
-    implementation(project(":feature:ordered"))
     
     implementation(Dependencies.coreKtx)
     implementation(Dependencies.appcompat)
     implementation(Dependencies.material)
-    implementation(Dependencies.lificycle)
     implementation(Dependencies.koinAndroid)
 }

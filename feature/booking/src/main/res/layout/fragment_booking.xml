@@ -21,20 +21,9 @@
             android:layout_weight="1"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
 
-        <FrameLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/white10">
-
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/pay_button"
-                style="@style/CommonButton"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="16dp"
-                android:layout_marginVertical="12dp" />
-
-        </FrameLayout>
+        <include
+            android:id="@+id/bottom_button"
+            layout="@layout/bottom_button" />
 
     </LinearLayout>
 

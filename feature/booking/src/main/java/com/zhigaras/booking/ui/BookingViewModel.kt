@@ -5,11 +5,14 @@ import com.zhigaras.booking.domain.BookingInteractor
 import com.zhigaras.booking.ui.model.TouristInfoUiModel
 import com.zhigaras.core.BaseViewModel
 import com.zhigaras.core.Dispatchers
+import com.zhigaras.core.Navigation
+import com.zhigaras.ordered.ui.OrderedFragment
 
 class BookingViewModel(
     dispatchers: Dispatchers,
     override val flowWrapper: BookingFlowWrapper.Mutable,
-    private val interactor: BookingInteractor
+    private val interactor: BookingInteractor,
+    private val navigation: Navigation
 ) : BaseViewModel<BookingUiState>(dispatchers) {
     
     init {
@@ -23,6 +26,8 @@ class BookingViewModel(
             onUi = { it.handle(flowWrapper) }
         )
     }
+    
+    fun goToOrdered() = navigation.goAndAddToBackStack(OrderedFragment::class.java)
     
     fun addNewTourist() {
         flowWrapper.update {
