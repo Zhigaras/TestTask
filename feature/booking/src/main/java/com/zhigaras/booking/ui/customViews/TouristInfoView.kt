@@ -1,4 +1,4 @@
-package com.zhigaras.booking.ui
+package com.zhigaras.booking.ui.customViews
 
 import android.content.Context
 import android.util.AttributeSet
