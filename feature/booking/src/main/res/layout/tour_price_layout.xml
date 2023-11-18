@@ -40,7 +40,7 @@
             android:textAppearance="@style/PriceUnitText" />
 
         <TextView
-            android:id="@+id/price_value"
+            android:id="@+id/fuel_charge_value"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="end"

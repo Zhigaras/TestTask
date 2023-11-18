@@ -15,13 +15,10 @@ class PriceView @JvmOverloads constructor(
     private val priceUnitTextView by lazy { findViewById<TextView>(R.id.price_unit_text_view) }
     
     fun setPrice(price: String, priceUnit: String, isStartedFrom: Boolean) {
-        priceTextView.text = buildString {
-            if (isStartedFrom) append(context.getString(R.string.from))
-            append(' ')
-            append(price)
-            append(' ')
-            append(context.getString(R.string.ruble_sign))
-        }
+        priceTextView.text = context.getString(
+            if (isStartedFrom) R.string.price_from else R.string.price_exact,
+            price
+        )
         priceUnitTextView.text = priceUnit
     }
 }

@@ -1,6 +1,8 @@
 package com.zhigaras.booking.ui.model
 
 import com.zhigaras.adapterdelegate.ListItem
+import com.zhigaras.booking.databinding.TourPriceLayoutBinding
+import com.zhigaras.uikit.R
 
 data class TourPriceUiModel(
     private val tourId: Int,
@@ -18,5 +20,12 @@ data class TourPriceUiModel(
     override fun areContentTheSame(other: ListItem): Boolean {
         if (other !is TourPriceUiModel) return false
         return this == other
+    }
+    
+    fun bind(binding: TourPriceLayoutBinding) = with(binding) {
+        tourPriceValue.text = root.context.getString(R.string.price_exact, tourPrice)
+        fuelChargeValue.text = root.context.getString(R.string.price_exact, fuelCharge)
+        serviceChargeValue.text = root.context.getString(R.string.price_exact, serviceCharge)
+        totalPriceValue.text = root.context.getString(R.string.price_exact, totalPrice)
     }
 }

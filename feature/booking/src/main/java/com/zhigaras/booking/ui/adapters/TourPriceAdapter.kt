@@ -13,7 +13,7 @@ class TourPriceAdapter : DelegateAdapter<TourPriceUiModel, TourPriceAdapter.Tour
         DelegateViewHolder<TourPriceUiModel>(binding) {
         
         override fun bind(item: TourPriceUiModel) {
-        
+            item.bind(binding)
         }
     }
     
