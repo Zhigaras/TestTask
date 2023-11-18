@@ -3,6 +3,7 @@ package com.zhigaras.booking.domain.model
 import com.zhigaras.booking.ui.model.BookingInfoUiModel
 import com.zhigaras.booking.ui.model.BuyerInfo
 import com.zhigaras.booking.ui.model.HotelInfoUiModel
+import com.zhigaras.booking.ui.model.TouristInfo
 import com.zhigaras.cloudservice.model.booking.BookingDto
 
 class BookingDomainModel(dto: BookingDto) {
@@ -22,14 +23,14 @@ class BookingDomainModel(dto: BookingDto) {
     private val tourDateStop: String = dto.tourDateStop
     private val tourPrice: Int = dto.tourPrice
     
-    fun makeHotelInfo() = HotelInfoUiModel(
+    private fun makeHotelInfo() = HotelInfoUiModel(
         id = id,
         hotelName = hotelName,
         hotelAddress = hotelAddress,
         rating = "$rating $ratingName"
     )
     
-    fun makeBookingInfo() = BookingInfoUiModel(
+    private fun makeBookingInfo() = BookingInfoUiModel(
         id = id,
         arrivalCountry = arrivalCountry,
         departure = departure,
@@ -40,5 +41,11 @@ class BookingDomainModel(dto: BookingDto) {
         tourDates = "$tourDateStart - $tourDateStop"
     )
     
-    fun toUi() = listOf(makeHotelInfo(), makeBookingInfo(), BuyerInfo())
+    fun toUi() = listOf(
+        makeHotelInfo(),
+        makeBookingInfo(),
+        BuyerInfo(),
+        TouristInfo(1, true),
+        TouristInfo(2)
+    )
 }

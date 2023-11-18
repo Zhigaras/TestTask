@@ -13,7 +13,6 @@ class BookingInfoUiModel(
     val room: String,
     val tourDates: String,
 ) : ListItem {
-    override fun itemType() = this::class.hashCode() // TODO: move to parent
     
     override fun areItemTheSame(other: ListItem): Boolean {
         if (other !is BookingInfoUiModel) return false

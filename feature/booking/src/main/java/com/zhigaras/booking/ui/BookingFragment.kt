@@ -9,6 +9,7 @@ import com.zhigaras.booking.databinding.FragmentBookingBinding
 import com.zhigaras.booking.ui.adapters.BookingInfoAdapter
 import com.zhigaras.booking.ui.adapters.BuyerInfoAdapter
 import com.zhigaras.booking.ui.adapters.HotelInfoAdapter
+import com.zhigaras.booking.ui.adapters.TouristInfoAdapter
 import com.zhigaras.core.BaseFragment
 import com.zhigaras.uikit.MarginDecoration
 import org.koin.androidx.viewmodel.ext.android.viewModel
@@ -27,6 +28,7 @@ class BookingFragment : BaseFragment<FragmentBookingBinding>() {
             .addAdapter(HotelInfoAdapter())
             .addAdapter(BookingInfoAdapter())
             .addAdapter(BuyerInfoAdapter())
+            .addAdapter(TouristInfoAdapter())
             .build()
         
         binding.bookingRecyclerView.apply {

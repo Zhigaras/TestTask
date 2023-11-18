@@ -10,8 +10,6 @@ class HotelInfoUiModel(
     val rating: String,
 ) : ListItem {
     
-    override fun itemType() = this::class.hashCode()
-    
     override fun areItemTheSame(other: ListItem): Boolean {
         if (other !is HotelInfoUiModel) return false
         return id == other.id
