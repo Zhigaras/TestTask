@@ -2,10 +2,10 @@ package com.zhigaras.booking.domain.model
 
 import com.zhigaras.booking.ui.model.AddTouristUiModel
 import com.zhigaras.booking.ui.model.BookingInfoUiModel
-import com.zhigaras.booking.ui.model.BuyerInfo
+import com.zhigaras.booking.ui.model.BuyerInfoUiModel
 import com.zhigaras.booking.ui.model.HotelInfoUiModel
 import com.zhigaras.booking.ui.model.TourPriceUiModel
-import com.zhigaras.booking.ui.model.TouristInfo
+import com.zhigaras.booking.ui.model.TouristInfoUiModel
 import com.zhigaras.cloudservice.model.booking.BookingDto
 import com.zhigaras.core.formatPrice
 
@@ -55,9 +55,9 @@ class BookingDomainModel(dto: BookingDto) {
     fun toUi() = listOf(
         makeHotelInfo(),
         makeBookingInfo(),
-        BuyerInfo(),
-        TouristInfo(1, true),
-        TouristInfo(2),
+        BuyerInfoUiModel(),
+        TouristInfoUiModel(1, true),
+        TouristInfoUiModel(2),
         AddTouristUiModel(),
         makeTourPrice()
     )

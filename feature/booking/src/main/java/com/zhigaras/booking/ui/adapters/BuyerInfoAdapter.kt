@@ -6,19 +6,19 @@ import com.zhigaras.adapterdelegate.DelegateAdapter
 import com.zhigaras.adapterdelegate.DelegateViewHolder
 import com.zhigaras.booking.R
 import com.zhigaras.booking.databinding.BuyerInfoBinding
-import com.zhigaras.booking.ui.model.BuyerInfo
+import com.zhigaras.booking.ui.model.BuyerInfoUiModel
 
-class BuyerInfoAdapter : DelegateAdapter<BuyerInfo, BuyerInfoAdapter.BuyerInfoViewHolder>() {
+class BuyerInfoAdapter : DelegateAdapter<BuyerInfoUiModel, BuyerInfoAdapter.BuyerInfoViewHolder>() {
     
     inner class BuyerInfoViewHolder(private val binding: BuyerInfoBinding) :
-        DelegateViewHolder<BuyerInfo>(binding) {
-        override fun bind(item: BuyerInfo) {
+        DelegateViewHolder<BuyerInfoUiModel>(binding) {
+        override fun bind(item: BuyerInfoUiModel) {
             binding.emailInput.root.setHint(R.string.email)
             binding.phoneInput.root.setHint(R.string.phone_number)
         }
     }
     
-    override fun viewType() = BuyerInfo::class.hashCode()
+    override fun viewType() = BuyerInfoUiModel::class.hashCode()
     
     override fun createViewHolder(parent: ViewGroup) = BuyerInfoViewHolder(
         BuyerInfoBinding.inflate(

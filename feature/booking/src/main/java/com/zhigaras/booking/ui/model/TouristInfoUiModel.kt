@@ -2,7 +2,7 @@ package com.zhigaras.booking.ui.model
 
 import com.zhigaras.adapterdelegate.ListItem
 
-class TouristInfo(
+class TouristInfoUiModel(
     private val id: Int,
     private val isExpanded: Boolean = false,
     private val firstName: String = "",
@@ -14,12 +14,12 @@ class TouristInfo(
 ) : ListItem {
     
     override fun areItemTheSame(other: ListItem): Boolean {
-        if (other !is TouristInfo) return false
+        if (other !is TouristInfoUiModel) return false
         return id == other.id
     }
     
     override fun areContentTheSame(other: ListItem): Boolean {
-        if (other !is TouristInfo) return false
+        if (other !is TouristInfoUiModel) return false
         return false // TODO: fix
     }
 }
