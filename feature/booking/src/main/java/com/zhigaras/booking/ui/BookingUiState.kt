@@ -1,5 +1,6 @@
 package com.zhigaras.booking.ui
 
+import android.view.View
 import com.zhigaras.adapterdelegate.CompositeAdapter
 import com.zhigaras.adapterdelegate.ListItem
 import com.zhigaras.booking.databinding.FragmentBookingBinding
@@ -15,8 +16,11 @@ interface BookingUiState : UiState<FragmentBookingBinding> {
     
     class Loading : BookingUiState {
         
-        override fun update(binding: FragmentBookingBinding) {
-        
+        override fun update(binding: FragmentBookingBinding) = with(binding) {
+            progressBar.root.visibility = View.VISIBLE
+            connectionError.root.visibility = View.GONE
+            payload.visibility = View.GONE
+            
         }
     }
     
@@ -26,13 +30,19 @@ interface BookingUiState : UiState<FragmentBookingBinding> {
             (bookingRecyclerView.adapter as CompositeAdapter).submitList(data)
             (data.findLast { it is TourPriceUiModel } as TourPriceUiModel)
                 .bindPayButton(binding.payButton)
+            progressBar.root.visibility = View.GONE
+            connectionError.root.visibility = View.GONE
+            payload.visibility = View.VISIBLE
         }
     }
     
     class Error(private val message: String) : BookingUiState {
         
-        override fun update(binding: FragmentBookingBinding) {
-        
+        override fun update(binding: FragmentBookingBinding) = with(binding) {
+            connectionError.errorTextView.text = message
+            progressBar.root.visibility = View.GONE
+            connectionError.root.visibility = View.VISIBLE
+            payload.visibility = View.GONE
         }
     }
 }
