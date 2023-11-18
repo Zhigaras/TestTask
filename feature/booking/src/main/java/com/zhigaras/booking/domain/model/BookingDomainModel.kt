@@ -4,8 +4,10 @@ import com.zhigaras.booking.ui.model.AddTouristUiModel
 import com.zhigaras.booking.ui.model.BookingInfoUiModel
 import com.zhigaras.booking.ui.model.BuyerInfo
 import com.zhigaras.booking.ui.model.HotelInfoUiModel
+import com.zhigaras.booking.ui.model.TourPriceUiModel
 import com.zhigaras.booking.ui.model.TouristInfo
 import com.zhigaras.cloudservice.model.booking.BookingDto
+import com.zhigaras.core.formatPrice
 
 class BookingDomainModel(dto: BookingDto) {
     private val arrivalCountry: String = dto.arrivalCountry
@@ -42,12 +44,21 @@ class BookingDomainModel(dto: BookingDto) {
         tourDates = "$tourDateStart - $tourDateStop"
     )
     
+    private fun makeTourPrice() = TourPriceUiModel(
+        tourId = id,
+        tourPrice = tourPrice.formatPrice(),
+        fuelCharge = fuelCharge.formatPrice(),
+        serviceCharge = serviceCharge.formatPrice(),
+        totalPrice = (tourPrice + serviceCharge + fuelCharge).formatPrice()
+    )
+    
     fun toUi() = listOf(
         makeHotelInfo(),
         makeBookingInfo(),
         BuyerInfo(),
         TouristInfo(1, true),
         TouristInfo(2),
-        AddTouristUiModel()
+        AddTouristUiModel(),
+        makeTourPrice()
     )
 }

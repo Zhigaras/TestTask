@@ -10,6 +10,7 @@ import com.zhigaras.booking.ui.adapters.AddTouristAdapter
 import com.zhigaras.booking.ui.adapters.BookingInfoAdapter
 import com.zhigaras.booking.ui.adapters.BuyerInfoAdapter
 import com.zhigaras.booking.ui.adapters.HotelInfoAdapter
+import com.zhigaras.booking.ui.adapters.TourPriceAdapter
 import com.zhigaras.booking.ui.adapters.TouristInfoAdapter
 import com.zhigaras.core.BaseFragment
 import com.zhigaras.uikit.MarginDecoration
@@ -31,6 +32,7 @@ class BookingFragment : BaseFragment<FragmentBookingBinding>() {
             .addAdapter(BuyerInfoAdapter())
             .addAdapter(TouristInfoAdapter())
             .addAdapter(AddTouristAdapter())
+            .addAdapter(TourPriceAdapter())
             .build()
         
         binding.bookingRecyclerView.apply {

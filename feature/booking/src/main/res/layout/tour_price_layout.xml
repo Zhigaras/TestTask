@@ -1,9 +1,93 @@
 <?xml version="1.0" encoding="utf-8"?>
 <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="@drawable/common_card_bg"
     android:divider="@drawable/booking_info_divider"
     android:padding="16dp"
     android:showDividers="middle"
-    android:stretchColumns="*" />
+    android:stretchColumns="0">
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/tour"
+            android:textAppearance="@style/PriceUnitText" />
+
+        <TextView
+            android:id="@+id/tour_price_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="end"
+            android:textAppearance="@style/DescriptionText"
+            tools:text="123 123 P" />
+
+    </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/fuel_charge"
+            android:textAppearance="@style/PriceUnitText" />
+
+        <TextView
+            android:id="@+id/price_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="end"
+            android:textAppearance="@style/DescriptionText"
+            tools:text="123 123 P" />
+
+    </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/service_charge"
+            android:textAppearance="@style/PriceUnitText" />
+
+        <TextView
+            android:id="@+id/service_charge_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="end"
+            android:textAppearance="@style/DescriptionText"
+            tools:text="123 123 P" />
+
+    </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/total_price"
+            android:textAppearance="@style/PriceUnitText" />
+
+        <TextView
+            android:id="@+id/total_price_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="end"
+            android:textAppearance="@style/DescriptionText"
+            android:textColor="@color/blue"
+            tools:text="123 123 P" />
+
+    </TableRow>
+
+</TableLayout>

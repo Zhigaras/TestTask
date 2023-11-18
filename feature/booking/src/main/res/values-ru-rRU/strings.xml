@@ -16,6 +16,10 @@
     <string name="phone_number">Номер телефона</string>
     <string name="email">Почта</string>
     <string name="add_tourist">Добавить туриста</string>
+    <string name="tour">Тур</string>
+    <string name="fuel_charge">Топливный сбор</string>
+    <string name="service_charge">Сервисный сбор</string>
+    <string name="total_price">К оплате</string>
     <string-array name="tourist_info">
         <item>Имя</item>
         <item>Фамилия</item>

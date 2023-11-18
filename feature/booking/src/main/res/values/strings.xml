@@ -16,6 +16,10 @@
     <string name="phone_number">Phone number</string>
     <string name="email">Email</string>
     <string name="add_tourist">Add tourist</string>
+    <string name="tour">Tour</string>
+    <string name="fuel_charge">Fuel charge</string>
+    <string name="service_charge">Service charge</string>
+    <string name="total_price">Total price</string>
     <string-array name="tourist_info">
         <item>First name</item>
         <item>Last name</item>
