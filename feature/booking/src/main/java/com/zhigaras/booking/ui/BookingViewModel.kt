@@ -22,4 +22,8 @@ class BookingViewModel(
             onUi = { it.handle(flowWrapper) }
         )
     }
+    
+    fun addNewTourist() {
+    
+    }
 }

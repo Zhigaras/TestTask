@@ -31,7 +31,7 @@ class BookingFragment : BaseFragment<FragmentBookingBinding>() {
             .addAdapter(BookingInfoAdapter())
             .addAdapter(BuyerInfoAdapter())
             .addAdapter(TouristInfoAdapter())
-            .addAdapter(AddTouristAdapter())
+            .addAdapter(AddTouristAdapter { viewModel.addNewTourist() })
             .addAdapter(TourPriceAdapter())
             .build()
         
@@ -39,6 +39,7 @@ class BookingFragment : BaseFragment<FragmentBookingBinding>() {
             this.adapter = adapter
             addItemDecoration(MarginDecoration(resources.getDimensionPixelSize(com.zhigaras.uikit.R.dimen.main_card_dimen)))
         }
+        binding.connectionError.retryButton.setOnClickListener { viewModel.fetchBookingInfo() }
         viewModel.scopeCollect {
             it.update(binding)
         }

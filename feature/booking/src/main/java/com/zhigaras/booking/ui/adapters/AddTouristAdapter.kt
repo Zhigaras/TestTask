@@ -7,14 +7,15 @@ import com.zhigaras.adapterdelegate.DelegateViewHolder
 import com.zhigaras.booking.databinding.AddTouristItemBinding
 import com.zhigaras.booking.ui.model.AddTouristUiModel
 
-class AddTouristAdapter :
-    DelegateAdapter<AddTouristUiModel, AddTouristAdapter.AddTouristViewHolder>() {
+class AddTouristAdapter(
+    private val onAddTouristClick: () -> Unit
+) : DelegateAdapter<AddTouristUiModel, AddTouristAdapter.AddTouristViewHolder>() {
     
-    class AddTouristViewHolder(private val binding: AddTouristItemBinding) :
+    inner class AddTouristViewHolder(private val binding: AddTouristItemBinding) :
         DelegateViewHolder<AddTouristUiModel>(binding) {
         
         override fun bind(item: AddTouristUiModel) {
-        
+            binding.addTouristButton.setOnClickListener { onAddTouristClick.invoke() }
         }
     }
     

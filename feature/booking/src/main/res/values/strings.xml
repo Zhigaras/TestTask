@@ -29,4 +29,11 @@
         <item>Passport validity period</item>
     </string-array>
     <string name="pay_button_text">Pay %1$s ₽</string>
+    <string-array name="tourist_count">
+        <item>First</item>
+        <item>Second</item>
+        <item>Third</item>
+        <item>Fourth</item>
+        <item>Fifth</item>
+    </string-array>
 </resources>

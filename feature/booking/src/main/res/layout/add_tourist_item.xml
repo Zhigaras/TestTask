@@ -17,6 +17,7 @@
         android:textAppearance="@style/RegularText22" />
 
     <ImageView
+        android:id="@+id/add_tourist_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/add_tourist_icon" />
