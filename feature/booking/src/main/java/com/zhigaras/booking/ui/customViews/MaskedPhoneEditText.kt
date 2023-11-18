@@ -26,7 +26,7 @@ class MaskedPhoneEditText @JvmOverloads constructor(
     
     override fun onAttachedToWindow() {
         super.onAttachedToWindow()
-        setOnFocusChangeListener { v, hasFocus ->
+        setOnFocusChangeListener { _, hasFocus ->
             hint = if (hasFocus) MASK else null
         }
     }

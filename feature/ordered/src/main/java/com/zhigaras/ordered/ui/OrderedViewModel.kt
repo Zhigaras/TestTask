@@ -10,4 +10,6 @@ class OrderedViewModel(
     override val flowWrapper: OrderedFlowWrapper.Mutable,
     private val navigation: Navigation
 ) : BaseViewModel<OrderedUiState>(dispatchers) {
+    
+
 }

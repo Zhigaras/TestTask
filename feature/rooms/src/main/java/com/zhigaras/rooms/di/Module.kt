@@ -11,7 +11,7 @@ import com.zhigaras.rooms.ui.RoomsViewModel
 import org.koin.dsl.bind
 import org.koin.dsl.binds
 
-fun roomsModule() = listOf(bookingModule()) + module {
+fun roomsModule() = bookingModule() + module {
     
     viewModelOf(::RoomsViewModel)
     

@@ -8,18 +8,4 @@ interface OrderedUiState : UiState<FragmentOrderedBinding> {
     class Initial : OrderedUiState {
         override fun update(binding: FragmentOrderedBinding) = Unit
     }
-    
-    class Success : OrderedUiState {
-        
-        override fun update(binding: FragmentOrderedBinding) {
-        
-        }
-    }
-    
-    class Error : OrderedUiState {
-        
-        override fun update(binding: FragmentOrderedBinding) {
-        
-        }
-    }
 }

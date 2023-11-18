@@ -25,6 +25,7 @@ class BookingFragment : BaseFragment<FragmentBookingBinding>() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         
+        binding.navBar.root.addBackNavigation(parentFragmentManager)
         binding.navBar.root.setHeader(getString(R.string.booking))
         val adapter = CompositeAdapter.Builder()
             .addAdapter(HotelInfoAdapter())

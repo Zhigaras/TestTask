@@ -9,10 +9,7 @@ class App : Application() {
     override fun onCreate() {
         super.onCreate()
         startKoin {
-            modules(
-                listOf(mainModule())
-                        + hotelModule()
-            )
+            modules(listOf(mainModule()) + hotelModule())
         }
     }
 }
