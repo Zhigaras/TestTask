@@ -7,10 +7,11 @@ import com.zhigaras.booking.domain.BookingRepository
 import org.koin.androidx.viewmodel.dsl.viewModelOf
 import org.koin.dsl.module
 import com.zhigaras.booking.ui.BookingViewModel
+import com.zhigaras.ordered.di.orderedModule
 import org.koin.dsl.bind
 import org.koin.dsl.binds
 
-fun bookingModule() = module {
+fun bookingModule() = listOf(orderedModule()) + module {
     
     viewModelOf(::BookingViewModel)
     
