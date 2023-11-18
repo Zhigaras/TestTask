@@ -7,6 +7,8 @@ interface FlowWrapper {
     
     interface Post<T : Any> {
         fun post(item: T)
+        
+        fun update(action: (T) -> T)
     }
     
     interface Collect<T : Any> {
@@ -24,6 +26,10 @@ interface FlowWrapper {
         
         override suspend fun collect(collector: FlowCollector<T>) {
             flow.collect(collector)
+        }
+        
+        override fun update(action: (T) -> T) {
+            action.invoke(flow.value).let { flow.value = it }
         }
     }
     

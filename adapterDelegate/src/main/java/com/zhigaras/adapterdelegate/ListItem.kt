@@ -2,7 +2,7 @@ package com.zhigaras.adapterdelegate
 
 interface ListItem {
     
-    fun itemType(): Int
+    fun itemType(): Int = this::class.hashCode()
     
     fun areItemTheSame(other: ListItem): Boolean
     

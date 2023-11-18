@@ -6,6 +6,7 @@ import android.view.View
 import com.zhigaras.adapterdelegate.CompositeAdapter
 import com.zhigaras.core.BaseFragment
 import com.zhigaras.rooms.databinding.FragmentRoomsBinding
+import com.zhigaras.uikit.MarginDecoration
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import com.zhigaras.uikit.R
 
@@ -19,14 +20,14 @@ class RoomsFragment : BaseFragment<FragmentRoomsBinding>() {
         super.onViewCreated(view, savedInstanceState)
         
         val adapter = CompositeAdapter.Builder()
-            .addAdapter(RoomsAdapter())
+            .addAdapter(RoomsAdapter { viewModel.navigateToBooking() })
             .build()
         
         binding.roomsRecyclerView.apply {
             this.adapter = adapter
             addItemDecoration(MarginDecoration(resources.getDimensionPixelSize(R.dimen.main_card_dimen)))
         }
-        binding.navBar.navBarTitle.text = arguments?.getString(HOTEL_NAME_KEY)
+        arguments?.getString(HOTEL_NAME_KEY)?.let { binding.navBar.root.setHeader(it) }
         binding.navBar.root.addBackNavigation(parentFragmentManager)
         
         binding.connectionError.retryButton.setOnClickListener {

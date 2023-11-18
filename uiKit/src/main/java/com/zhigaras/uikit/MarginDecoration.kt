@@ -1,4 +1,4 @@
-package com.zhigaras.rooms.ui
+package com.zhigaras.uikit
 
 import android.graphics.Rect
 import android.view.View

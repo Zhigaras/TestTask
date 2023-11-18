@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="booking">Бронирование</string>
+    <string name="pay">Оплатить %1$s ₽</string>
+    <string-array name="booking_info">
+        <item>Вылет из</item>
+        <item>Страна, горд</item>
+        <item>Даты</item>
+        <item>Кол-во ночей</item>
+        <item>Отель</item>
+        <item>Номер</item>
+        <item>Питание</item>
+    </string-array>
+    <string name="buyer_info">Информация о покупателе</string>
+    <string name="buyer_info_bottom_text">Эти данные никому не передаются. После оплаты мы вышлем чек на указанный вами номер и почту</string>
+    <string name="phone_number">Номер телефона</string>
+    <string name="email">Почта</string>
+    <string name="add_tourist">Добавить туриста</string>
+    <string name="tour">Тур</string>
+    <string name="fuel_charge">Топливный сбор</string>
+    <string name="service_charge">Сервисный сбор</string>
+    <string name="total_price">К оплате</string>
+    <string-array name="tourist_info">
+        <item>Имя</item>
+        <item>Фамилия</item>
+        <item>Дата рождения</item>
+        <item>Гражданство</item>
+        <item>Номер загранпаспорта</item>
+        <item>Срок действия загранпаспорта</item>
+    </string-array>
+    <string name="pay_button_text">Оплатить %1$s ₽</string>
+    <string-array name="tourist_count">
+        <item>Первый</item>
+        <item>Второй</item>
+        <item>Третий</item>
+        <item>Четвертый</item>
+        <item>Пятый</item>
+    </string-array>
+</resources>

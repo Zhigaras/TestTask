@@ -11,9 +11,9 @@ data class BookingDto(
     @SerializedName("fuel_charge")
     val fuelCharge: Int,
     @SerializedName("horating")
-    val horating: Int,
+    val rating: Int,
     @SerializedName("hotel_adress")
-    val hotelAdress: String,
+    val hotelAddress: String,
     @SerializedName("hotel_name")
     val hotelName: String,
     @SerializedName("id")
