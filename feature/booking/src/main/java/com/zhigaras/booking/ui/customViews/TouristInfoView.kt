@@ -4,6 +4,7 @@ import android.content.Context
 import android.util.AttributeSet
 import android.widget.ImageView
 import android.widget.LinearLayout
+import androidx.core.view.children
 import androidx.core.view.isVisible
 import androidx.lifecycle.findViewTreeLifecycleOwner
 import androidx.lifecycle.lifecycleScope
@@ -18,6 +19,7 @@ class TouristInfoView @JvmOverloads constructor(
 ) : LinearLayout(context, attrs, defStyleAttr) {
     
     private val expandedFlow = MutableStateFlow(false)
+    private val touristInfoList = resources.getStringArray(R.array.tourist_info)
     private val expandButton by lazy { findViewById<ImageView>(R.id.expand_button) }
     private val viewToHide by lazy { findViewById<LinearLayout>(R.id.view_to_hide) }
     
@@ -25,6 +27,9 @@ class TouristInfoView @JvmOverloads constructor(
         super.onAttachedToWindow()
         expandButton.setOnClickListener {
             expandedFlow.value = !expandedFlow.value
+        }
+        viewToHide.children.toList().zip(touristInfoList).forEach { (view, hint) ->
+            (view as BaseInputLayout).hint = hint
         }
         
         findViewTreeLifecycleOwner()?.lifecycleScope?.launch {

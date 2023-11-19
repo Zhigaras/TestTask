@@ -40,4 +40,12 @@ class BookingViewModel(
             }
         }
     }
+    
+    fun handleTyping() {
+//        flowWrapper.update {
+//            it.updateData { list ->
+//
+//            }
+//        }
+    }
 }
