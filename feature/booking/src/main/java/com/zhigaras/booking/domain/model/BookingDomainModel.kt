@@ -56,8 +56,8 @@ class BookingDomainModel(dto: BookingDto) {
         makeHotelInfo(),
         makeBookingInfo(),
         BuyerInfoUiModel(),
-        TouristInfoUiModel(0, true),
-        AddTouristUiModel(),
+        TouristInfoUiModel(1, true),
+        AddTouristUiModel,
         makeTourPrice()
     )
 }

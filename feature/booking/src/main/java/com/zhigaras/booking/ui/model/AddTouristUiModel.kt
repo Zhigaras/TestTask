@@ -2,7 +2,7 @@ package com.zhigaras.booking.ui.model
 
 import com.zhigaras.adapterdelegate.ListItem
 
-class AddTouristUiModel : ListItem {
+object AddTouristUiModel : ListItem {
     
     override fun areItemTheSame(other: ListItem): Boolean = true
     

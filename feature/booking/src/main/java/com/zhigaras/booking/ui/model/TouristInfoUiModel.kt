@@ -31,7 +31,7 @@ data class TouristInfoUiModel(
         return Payload.None()
     }
     
-    fun nextId() = number + 1
+    fun nextNumber() = number + 1
     
     fun bind(binding: TouristInfoBinding) = with(binding) {
         root.bind(

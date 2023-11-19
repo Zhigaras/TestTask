@@ -36,7 +36,7 @@ class TouristInfoView @JvmOverloads constructor(
     
     fun bind(isExpanded: Boolean, number: Int, vararg input: String) {
         bindExpanding(isExpanded)
-        touristNumberTextView.text = touristCountList[number]
+        touristNumberTextView.text = touristCountList[number - 1]
         inputFields.zip(input).forEach { (view, string) ->
             (view as BaseInputLayout).setText(string)
         }
