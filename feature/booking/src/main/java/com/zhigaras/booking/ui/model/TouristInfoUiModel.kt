@@ -7,13 +7,12 @@ import com.zhigaras.booking.databinding.TouristInfoBinding
 data class TouristInfoUiModel(
     val number: Int,
     val isExpanded: Boolean = false,
-    private val firstName: String = "",
-    private val lastName: String = "",
-    private val dateOfBirth: String = "",
-    private val citizenship: String = "",
-    private val passportNumber: String = "",
-    private val passportValidityPeriod: String = ""
+    private val touristParams: MutableList<String> = MutableList(6) { "" },
 ) : ListItem {
+    
+    fun updateTouristParam(paramIndex: Int, text: String) {
+        touristParams[paramIndex] = text
+    }
     
     override fun areItemTheSame(other: ListItem): Boolean {
         if (other !is TouristInfoUiModel) return false
@@ -34,16 +33,7 @@ data class TouristInfoUiModel(
     fun nextNumber() = number + 1
     
     fun bind(binding: TouristInfoBinding) = with(binding) {
-        root.bind(
-            isExpanded,
-            number,
-            firstName,
-            lastName,
-            dateOfBirth,
-            citizenship,
-            passportNumber,
-            passportValidityPeriod
-        )
+        root.bind(isExpanded, number, touristParams)
     }
 }
 

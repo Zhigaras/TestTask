@@ -34,16 +34,24 @@ class TouristInfoView @JvmOverloads constructor(
         expandButton.setOnClickListener(listener)
     }
     
-    fun bind(isExpanded: Boolean, number: Int, vararg input: String) {
+    fun setTypingListeners(action: (Int, String) -> Unit) {
+        inputFields.forEachIndexed { index, view ->
+            (view as BaseInputLayout).setTypingListener {
+                action.invoke(index, it)
+            }
+        }
+    }
+    
+    fun bind(isExpanded: Boolean, number: Int, touristParams: List<String>) {
         bindExpanding(isExpanded)
         touristNumberTextView.text = touristCountList[number - 1]
-        inputFields.zip(input).forEach { (view, string) ->
-            (view as BaseInputLayout).setText(string)
+        inputFields.zip(touristParams).forEach { (view, param) ->
+            (view as BaseInputLayout).setText(param)
         }
     }
     
     fun bindExpanding(isExpanded: Boolean) {
         viewToHide.isVisible = isExpanded
-        expandButton.rotation = if (isExpanded) 180f else 0f
+        expandButton.rotation = if (isExpanded) 0f else 180f
     }
 }

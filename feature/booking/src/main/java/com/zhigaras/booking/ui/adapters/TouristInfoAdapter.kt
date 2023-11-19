@@ -8,7 +8,8 @@ import com.zhigaras.booking.databinding.TouristInfoBinding
 import com.zhigaras.booking.ui.model.TouristInfoUiModel
 
 class TouristInfoAdapter(
-    private val onExpandClick: (Int) -> Unit
+    private val onExpandClick: (Int) -> Unit,
+    private val doOnType: (Int, Int, String) -> Unit
 ) : DelegateAdapter<TouristInfoUiModel, TouristInfoAdapter.TouristInfoViewHolder>() {
     
     inner class TouristInfoViewHolder(private val binding: TouristInfoBinding) :
@@ -16,6 +17,9 @@ class TouristInfoAdapter(
         override fun bind(item: TouristInfoUiModel) {
             item.bind(binding)
             binding.root.setOnExpandClickListener { onExpandClick.invoke(item.number) }
+            binding.root.setTypingListeners { fieldIndex, text ->
+                doOnType.invoke(item.number, fieldIndex, text)
+            }
         }
     }
     

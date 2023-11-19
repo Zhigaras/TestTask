@@ -31,7 +31,12 @@ class BookingFragment : BaseFragment<FragmentBookingBinding>() {
             .addAdapter(HotelInfoAdapter())
             .addAdapter(BookingInfoAdapter())
             .addAdapter(BuyerInfoAdapter())
-            .addAdapter(TouristInfoAdapter { viewModel.handleTouristExpanding(it) }) // TODO: handle debounce
+            .addAdapter(TouristInfoAdapter(
+                onExpandClick = { viewModel.handleTouristExpanding(it) },
+                doOnType = { touristNumber, fieldNumber, text ->
+                    viewModel.handleTyping(touristNumber, fieldNumber, text)
+                }
+            )) // TODO: handle debounce
             .addAdapter(AddTouristAdapter { viewModel.addNewTourist() })
             .addAdapter(TourPriceAdapter())
             .build()
