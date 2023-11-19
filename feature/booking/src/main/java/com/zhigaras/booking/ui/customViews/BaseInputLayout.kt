@@ -9,5 +9,8 @@ open class BaseInputLayout @JvmOverloads constructor(
     attrs: AttributeSet? = null,
     defStyleAttr: Int = 0
 ) : TextInputLayout(context, attrs, defStyleAttr) {
-
+    
+    fun setText(string: String) {
+        editText?.setText(string)
+    }
 }

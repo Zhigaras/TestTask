@@ -7,13 +7,15 @@ import com.zhigaras.adapterdelegate.DelegateViewHolder
 import com.zhigaras.booking.databinding.TouristInfoBinding
 import com.zhigaras.booking.ui.model.TouristInfoUiModel
 
-class TouristInfoAdapter :
-    DelegateAdapter<TouristInfoUiModel, TouristInfoAdapter.TouristInfoViewHolder>() {
+class TouristInfoAdapter(
+    private val onExpandClick: (Int) -> Unit
+) : DelegateAdapter<TouristInfoUiModel, TouristInfoAdapter.TouristInfoViewHolder>() {
     
     inner class TouristInfoViewHolder(private val binding: TouristInfoBinding) :
         DelegateViewHolder<TouristInfoUiModel>(binding) {
         override fun bind(item: TouristInfoUiModel) {
-            binding.root
+            item.bind(binding)
+            binding.root.setOnExpandClickListener { onExpandClick.invoke(item.number) }
         }
     }
     

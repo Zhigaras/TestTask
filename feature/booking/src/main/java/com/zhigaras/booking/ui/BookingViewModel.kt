@@ -41,6 +41,20 @@ class BookingViewModel(
         }
     }
     
+    fun handleTouristExpanding(touristIndex: Int) {
+        flowWrapper.update {
+            it.updateData { list ->
+                val touristList = list.filter { it is TouristInfoUiModel }
+                val toggledTourist =
+                    touristList.find { (it as TouristInfoUiModel).number == touristIndex } as TouristInfoUiModel
+                val listIndex = list.indexOf(toggledTourist)
+                return@updateData list.toMutableList().also {
+                    it[listIndex] = toggledTourist.copy(isExpanded = !toggledTourist.isExpanded)
+                }
+            }
+        }
+    }
+    
     fun handleTyping() {
 //        flowWrapper.update {
 //            it.updateData { list ->
