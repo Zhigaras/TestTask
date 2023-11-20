@@ -1,5 +1,5 @@
 # TestTask
-Please, check "using_delegate_adapter" if you want to see it.
+Please, check "using_delegate_adapter" branch if you want to see it.
 
 Made with:<br />
 
