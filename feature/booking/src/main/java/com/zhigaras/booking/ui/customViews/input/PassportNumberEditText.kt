@@ -1,15 +1,15 @@
-package com.zhigaras.booking.ui.customViews.inputLayouts
+package com.zhigaras.booking.ui.customViews.input
 
 import android.content.Context
 import android.text.InputType
 import android.util.AttributeSet
 import androidx.core.text.isDigitsOnly
 
-class PassportNumberInputLayout @JvmOverloads constructor(
+class PassportNumberEditText @JvmOverloads constructor(
     context: Context,
     attrs: AttributeSet? = null,
     defStyleAttr: Int = 0
-) : AbstractInputLayout(context, attrs, defStyleAttr) {
+) : AbstractEditText(context, attrs, defStyleAttr) {
     
     override val customInputType = InputType.TYPE_CLASS_NUMBER
     

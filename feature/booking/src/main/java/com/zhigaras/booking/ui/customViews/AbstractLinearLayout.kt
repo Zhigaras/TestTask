@@ -5,7 +5,6 @@ import android.content.Context
 import android.util.AttributeSet
 import android.widget.LinearLayout
 import androidx.core.view.children
-import com.zhigaras.booking.ui.customViews.inputLayouts.InputValidation
 
 abstract class AbstractLinearLayout @JvmOverloads constructor(
     context: Context,

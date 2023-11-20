@@ -1,4 +1,4 @@
-package com.zhigaras.booking.ui.customViews.inputLayouts
+package com.zhigaras.booking.ui.customViews
 
 interface InputValidation {
     

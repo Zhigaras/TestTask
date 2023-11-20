@@ -9,7 +9,7 @@ import androidx.core.view.isVisible
 import androidx.lifecycle.findViewTreeLifecycleOwner
 import androidx.lifecycle.lifecycleScope
 import com.zhigaras.booking.R
-import com.zhigaras.booking.ui.customViews.inputLayouts.AbstractInputLayout
+import com.zhigaras.booking.ui.customViews.input.BaseInputLayout
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.launch
 
@@ -32,7 +32,7 @@ class TouristInfoLayout @JvmOverloads constructor(
             expandedFlow.value = !expandedFlow.value
         }
         payload.children.toList().zip(touristHintsList).forEach { (view, hint) ->
-            (view as AbstractInputLayout).hint = hint
+            (view as BaseInputLayout).hint = hint
         }
         
         findViewTreeLifecycleOwner()?.lifecycleScope?.launch {

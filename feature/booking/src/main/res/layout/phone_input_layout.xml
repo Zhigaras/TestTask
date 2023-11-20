@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.zhigaras.booking.ui.customViews.inputLayouts.PhoneInputLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<com.zhigaras.booking.ui.customViews.input.BaseInputLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     style="@style/Widget.Material3.TextInputLayout.FilledBox"
     android:layout_width="match_parent"
@@ -10,12 +10,13 @@
     app:cursorColor="@color/gray20"
     app:hintTextColor="@color/gray10">
 
-    <com.zhigaras.booking.ui.customViews.MaskedPhoneEditText
+    <com.zhigaras.booking.ui.customViews.input.PhoneEditText
         style="@style/Widget.Material3.TextInputEditText.FilledBox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/text_input_bg"
+        android:hint="@string/phone_number"
         android:maxLines="1"
         android:textAppearance="@style/DescriptionText" />
 
-</com.zhigaras.booking.ui.customViews.inputLayouts.PhoneInputLayout>
+</com.zhigaras.booking.ui.customViews.input.BaseInputLayout>
