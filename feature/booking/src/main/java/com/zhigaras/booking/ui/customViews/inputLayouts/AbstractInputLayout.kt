@@ -1,6 +1,7 @@
 package com.zhigaras.booking.ui.customViews.inputLayouts
 
 import android.content.Context
+import android.content.res.ColorStateList
 import android.util.AttributeSet
 import androidx.core.widget.doOnTextChanged
 import com.google.android.material.textfield.TextInputLayout
@@ -15,7 +16,7 @@ abstract class AbstractInputLayout @JvmOverloads constructor(
     
     protected abstract fun innerIsValid(): Boolean
     
-    override fun text(): String = (editText?.text ?: "").toString().trim()
+    fun text(): String = (editText?.text ?: "").toString().trim()
     
     override fun onAttachedToWindow() {
         super.onAttachedToWindow()
@@ -34,7 +35,10 @@ abstract class AbstractInputLayout @JvmOverloads constructor(
     
     override fun isValid(): Boolean {
         val isValid = innerIsValid()
-        if (!isValid) setBackgroundColor(context.getColor(com.zhigaras.uikit.R.color.red_15percent))
+        if (!isValid) editText?.backgroundTintList = ColorStateList(
+            arrayOf(intArrayOf()),
+            intArrayOf(context.getColor(com.zhigaras.uikit.R.color.red_15percent))
+        )
         return isValid
     }
 }

@@ -11,6 +11,7 @@ import androidx.lifecycle.findViewTreeLifecycleOwner
 import androidx.lifecycle.lifecycleScope
 import com.zhigaras.booking.R
 import com.zhigaras.booking.ui.customViews.inputLayouts.AbstractInputLayout
+import com.zhigaras.booking.ui.customViews.inputLayouts.InputValidation
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.launch
 
@@ -18,14 +19,13 @@ class TouristInfoView @JvmOverloads constructor(
     context: Context,
     attrs: AttributeSet? = null,
     defStyleAttr: Int = 0
-) : LinearLayout(context, attrs, defStyleAttr) {
+) : LinearLayout(context, attrs, defStyleAttr), InputValidation {
     
     private val expandedFlow = MutableStateFlow(true)
     private val touristHintsList = resources.getStringArray(R.array.tourist_hints)
     private val touristCountList = resources.getStringArray(R.array.tourist_count)
     private val expandButton by lazy { findViewById<ImageView>(R.id.expand_button) }
     private val viewToHide by lazy { findViewById<LinearLayout>(R.id.view_to_hide) }
-    private val inputFields by lazy { viewToHide.children.toList() }
     private val touristNumberTextView by lazy { findViewById<TextView>(R.id.tourist_number_text_view) }
     
     override fun onAttachedToWindow() {
@@ -43,6 +43,12 @@ class TouristInfoView @JvmOverloads constructor(
                 expandButton.rotation = if (isExpanded) 0f else 180f
             }
         }
+    }
+    
+    override fun isValid(): Boolean {
+        val childValidationList =
+            viewToHide.children.filterIsInstance<InputValidation>().map { it.isValid() }
+        return childValidationList.toList().all { it }
     }
     
     fun bind(isExpanded: Boolean, number: Int) {

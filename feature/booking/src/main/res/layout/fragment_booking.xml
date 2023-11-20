@@ -19,6 +19,7 @@
             android:layout_weight="1">
 
             <com.zhigaras.booking.ui.customViews.BookingLayout
+                android:id="@+id/booking_layout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:divider="@drawable/main_card_divider"

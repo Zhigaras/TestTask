@@ -20,7 +20,11 @@ class BookingFragment : BaseFragment<FragmentBookingBinding>() {
         binding.navBar.root.addBackNavigation(parentFragmentManager)
         binding.navBar.root.setHeader(getString(R.string.booking))
         
-        binding.bottomButton.button.setOnClickListener { viewModel.goToOrdered() }
+        binding.bottomButton.button.setOnClickListener {
+            val inputValidation = binding.bookingLayout.isValid()
+            if (inputValidation)
+                viewModel.goToOrdered()
+        }
         binding.connectionError.retryButton.setOnClickListener { viewModel.fetchBookingInfo() }
         viewModel.scopeCollect {
             it.update(binding)
