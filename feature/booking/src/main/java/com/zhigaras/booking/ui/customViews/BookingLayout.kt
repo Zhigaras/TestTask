@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.os.Parcelable
 import android.util.AttributeSet
 import android.view.LayoutInflater
+import android.view.View
 import android.widget.ImageView
 import android.widget.LinearLayout
 import com.zhigaras.booking.R
@@ -36,9 +37,10 @@ class BookingLayout @JvmOverloads constructor(
         tourists.add(view)
         view.bind(false, tourists.lastIndex)
         addView(view, indexOfChild(addTouristView))
+        if (tourists.size == MAX_TOURISTS_COUNT) addTouristView.visibility = View.GONE
     }
     
-    override fun onSaveInstanceState(): Parcelable? {
+    override fun onSaveInstanceState(): Parcelable {
         val bundle = Bundle()
         bundle.putParcelable("superState", super.onSaveInstanceState())
         bundle.putParcelable(
@@ -65,5 +67,9 @@ class BookingLayout @JvmOverloads constructor(
                 view.restoreData(tourist)
             }
         }
+    }
+    
+    companion object {
+        private const val MAX_TOURISTS_COUNT = 5
     }
 }
