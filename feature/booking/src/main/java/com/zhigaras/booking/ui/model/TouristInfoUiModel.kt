@@ -1,10 +1,11 @@
 package com.zhigaras.booking.ui.model
 
 import com.zhigaras.adapterdelegate.ListItem
+import com.zhigaras.booking.databinding.TouristInfoBinding
 
-class TouristInfoUiModel(
-    private val id: Int,
-    private val isExpanded: Boolean = false,
+data class TouristInfoUiModel(
+    val number: Int,
+    val isExpanded: Boolean = false,
     private val firstName: String = "",
     private val lastName: String = "",
     private val dateOfBirth: String = "",
@@ -15,13 +16,17 @@ class TouristInfoUiModel(
     
     override fun areItemTheSame(other: ListItem): Boolean {
         if (other !is TouristInfoUiModel) return false
-        return id == other.id
+        return number == other.number
     }
     
     override fun areContentTheSame(other: ListItem): Boolean {
         if (other !is TouristInfoUiModel) return false
-        return false // TODO: fix
+        return true // TODO: check
     }
     
-    fun nextId() = id + 1
+    fun nextNumber() = number + 1
+    
+    fun bind(binding: TouristInfoBinding) = with(binding) {
+        root.bind(isExpanded, number,)
+    }
 }

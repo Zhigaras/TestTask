@@ -13,7 +13,7 @@ class TouristInfoAdapter :
     inner class TouristInfoViewHolder(private val binding: TouristInfoBinding) :
         DelegateViewHolder<TouristInfoUiModel>(binding) {
         override fun bind(item: TouristInfoUiModel) {
-            binding.root
+            item.bind(binding)
         }
     }
     
