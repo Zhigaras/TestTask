@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -14,12 +13,45 @@
             android:id="@+id/nav_bar"
             layout="@layout/nav_bar" />
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/booking_recycler_view"
+        <ScrollView
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="1"
-            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+            android:layout_weight="1">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:divider="@drawable/main_card_divider"
+                android:orientation="vertical"
+                android:showDividers="middle">
+
+                <include
+                    android:id="@+id/booking_hotel_info_layout"
+                    layout="@layout/booking_hotel_info" />
+
+                <include
+                    android:id="@+id/booking_info_layout"
+                    layout="@layout/booking_info" />
+
+                <include
+                    android:id="@+id/buyer_info_layout"
+                    layout="@layout/buyer_info" />
+
+                <include
+                    android:id="@+id/tourist_info_layout"
+                    layout="@layout/tourist_info" />
+
+                <include
+                    android:id="@+id/add_tourist_layout"
+                    layout="@layout/add_tourist_item" />
+
+                <include
+                    android:id="@+id/tour_price_layout"
+                    layout="@layout/tour_price_layout" />
+
+            </LinearLayout>
+
+        </ScrollView>
 
         <include
             android:id="@+id/bottom_button"

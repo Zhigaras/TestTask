@@ -2,8 +2,6 @@ package com.zhigaras.booking.ui
 
 import com.zhigaras.booking.domain.BookingFlowWrapper
 import com.zhigaras.booking.domain.BookingInteractor
-import com.zhigaras.booking.ui.model.AddTouristUiModel
-import com.zhigaras.booking.ui.model.TouristInfoUiModel
 import com.zhigaras.core.BaseViewModel
 import com.zhigaras.core.Dispatchers
 import com.zhigaras.core.Navigation
@@ -29,20 +27,6 @@ class BookingViewModel(
     }
     
     fun goToOrdered() = navigation.goAndAddToBackStack(OrderedFragment::class.java)
-    
-    fun addNewTourist() {
-        flowWrapper.update {
-            it.updateData { list ->
-                val lastTourist = list.last { it is TouristInfoUiModel } as TouristInfoUiModel
-                val lastTouristIndex = list.indexOf(lastTourist)
-                list.toMutableList().apply {
-                    val nextId = lastTourist.nextNumber()
-                    if (nextId == MAX_TOURIST_COUNT) remove(AddTouristUiModel)
-                    add(lastTouristIndex + 1, TouristInfoUiModel(nextId))
-                }
-            }
-        }
-    }
     
     companion object {
         private const val MAX_TOURIST_COUNT = 5
