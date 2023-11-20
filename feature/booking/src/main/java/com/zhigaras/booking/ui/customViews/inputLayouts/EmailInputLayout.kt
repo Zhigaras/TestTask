@@ -4,6 +4,7 @@ import android.content.Context
 import android.text.InputType
 import android.util.AttributeSet
 import android.util.Patterns
+import com.zhigaras.booking.R
 
 class EmailInputLayout @JvmOverloads constructor(
     context: Context,
@@ -11,8 +12,11 @@ class EmailInputLayout @JvmOverloads constructor(
     defStyleAttr: Int = 0
 ) : AbstractInputLayout(context, attrs, defStyleAttr) {
     
-    override fun setInputType(fieldIndex: Int) {
-        editText?.inputType = InputType.TYPE_TEXT_VARIATION_EMAIL_ADDRESS
+    override val customInputType = InputType.TYPE_TEXT_VARIATION_EMAIL_ADDRESS
+    
+    override fun onAttachedToWindow() {
+        super.onAttachedToWindow()
+        hint = context.getString(R.string.email)
     }
     
     override fun innerIsValid(): Boolean {

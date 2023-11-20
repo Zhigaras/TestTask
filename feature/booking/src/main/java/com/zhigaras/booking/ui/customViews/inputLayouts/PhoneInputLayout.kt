@@ -3,6 +3,7 @@ package com.zhigaras.booking.ui.customViews.inputLayouts
 import android.content.Context
 import android.text.InputType
 import android.util.AttributeSet
+import com.zhigaras.booking.R
 import kotlin.random.Random
 
 class PhoneInputLayout @JvmOverloads constructor(
@@ -11,8 +12,11 @@ class PhoneInputLayout @JvmOverloads constructor(
     defStyleAttr: Int = 0
 ) : AbstractInputLayout(context, attrs, defStyleAttr) {
     
-    override fun setInputType(fieldIndex: Int) {
-        editText?.inputType = InputType.TYPE_CLASS_PHONE
+    override val customInputType = InputType.TYPE_CLASS_PHONE
+    
+    override fun onAttachedToWindow() {
+        super.onAttachedToWindow()
+        hint = context.getString(R.string.phone_number)
     }
     
     override fun innerIsValid(): Boolean {

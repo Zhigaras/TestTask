@@ -10,9 +10,7 @@ open class BaseInputLayout @JvmOverloads constructor(
     defStyleAttr: Int = 0
 ) : AbstractInputLayout(context, attrs, defStyleAttr) {
     
-    override fun setInputType(fieldIndex: Int) {
-        editText?.inputType = InputType.TYPE_TEXT_FLAG_CAP_WORDS
-    }
+    override val customInputType = InputType.TYPE_TEXT_FLAG_CAP_WORDS
     
     override fun innerIsValid(): Boolean {
         return editText?.text.isNullOrBlank().not()

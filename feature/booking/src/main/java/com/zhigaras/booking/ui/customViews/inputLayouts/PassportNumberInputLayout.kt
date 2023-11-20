@@ -11,9 +11,7 @@ class PassportNumberInputLayout @JvmOverloads constructor(
     defStyleAttr: Int = 0
 ) : AbstractInputLayout(context, attrs, defStyleAttr) {
     
-    override fun setInputType(fieldIndex: Int) {
-        editText?.inputType = InputType.TYPE_CLASS_NUMBER
-    }
+    override val customInputType = InputType.TYPE_CLASS_NUMBER
     
     override fun innerIsValid(): Boolean {
         return text().isDigitsOnly()

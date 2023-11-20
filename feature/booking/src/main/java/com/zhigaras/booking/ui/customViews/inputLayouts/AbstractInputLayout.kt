@@ -11,11 +11,16 @@ abstract class AbstractInputLayout @JvmOverloads constructor(
     defStyleAttr: Int = 0
 ) : TextInputLayout(context, attrs, defStyleAttr), InputValidation {
     
+    protected abstract val customInputType: Int
+    
     protected abstract fun innerIsValid(): Boolean
     
-    abstract fun setInputType(fieldIndex: Int)
-    
     override fun text(): String = (editText?.text ?: "").toString().trim()
+    
+    override fun onAttachedToWindow() {
+        super.onAttachedToWindow()
+        editText?.inputType = customInputType
+    }
     
     fun setText(string: String) {
         editText?.setText(string)

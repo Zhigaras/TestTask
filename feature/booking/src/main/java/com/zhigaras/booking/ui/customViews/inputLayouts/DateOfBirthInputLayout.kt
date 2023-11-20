@@ -10,9 +10,7 @@ class DateOfBirthInputLayout @JvmOverloads constructor(
     defStyleAttr: Int = 0
 ) : AbstractInputLayout(context, attrs, defStyleAttr) {
     
-    override fun setInputType(fieldIndex: Int) {
-        editText?.inputType = InputType.TYPE_CLASS_NUMBER
-    }
+    override val customInputType = InputType.TYPE_CLASS_NUMBER
     
     override fun innerIsValid(): Boolean {
         return Regex(DATE_PATTERN).matches(text())
