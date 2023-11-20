@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="booking">Booking</string>
+    <string name="pay">Pay %1$s ₽</string>
+    <string-array name="booking_info">
+        <item>Departure from</item>
+        <item>Country, city</item>
+        <item>Dates</item>
+        <item>Nights</item>
+        <item>Hotel</item>
+        <item>Suite</item>
+        <item>Meals</item>
+    </string-array>
+    <string name="buyer_info">Buyer information</string>
+    <string name="buyer_info_bottom_text">This data is not shared with anyone. After payment, we sent a check to the number and email you specified</string>
+    <string name="phone_number">Phone number</string>
+    <string name="email">Email</string>
+    <string name="add_tourist">Add tourist</string>
+    <string name="tour">Tour</string>
+    <string name="fuel_charge">Fuel charge</string>
+    <string name="service_charge">Service charge</string>
+    <string name="total_price">Total price</string>
+    <string-array name="tourist_hints">
+        <item>First name</item>
+        <item>Last name</item>
+        <item>Date of birth</item>
+        <item>Citizenship</item>
+        <item>Passport number</item>
+        <item>Passport validity period</item>
+    </string-array>
+    <string name="pay_button_text">Pay %1$s ₽</string>
+    <string-array name="tourist_count">
+        <item>First tourist</item>
+        <item>Second tourist</item>
+        <item>Third tourist</item>
+        <item>Fourth tourist</item>
+        <item>Fifth tourist</item>
+    </string-array>
+</resources>

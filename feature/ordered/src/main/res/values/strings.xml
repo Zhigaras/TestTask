@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="order_processed">Your order has been processed</string>
+    <string name="order_confirmation">Confirmation of order No. 104893 may take some time (from 1 hour to 24 hours). As soon as we receive a response from the tour operator, you will receive a notification by email.</string>
+    <string name="order_has_been_paid">Order has been paid</string>
+    <string name="super_text">Super!</string>
+</resources>

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/payload"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <include
+            android:id="@+id/nav_bar"
+            layout="@layout/nav_bar" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <com.zhigaras.booking.ui.customViews.BookingLayout
+                android:id="@+id/booking_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:divider="@drawable/main_card_divider"
+                android:orientation="vertical"
+                android:showDividers="middle">
+
+                <include
+                    android:id="@+id/booking_hotel_info_layout"
+                    layout="@layout/booking_hotel_info" />
+
+                <include
+                    android:id="@+id/booking_info_layout"
+                    layout="@layout/booking_info" />
+
+                <include
+                    android:id="@+id/buyer_info_layout"
+                    layout="@layout/buyer_info" />
+
+                <include
+                    android:id="@+id/tourist_info_layout"
+                    layout="@layout/tourist_info" />
+
+                <include
+                    android:id="@+id/add_tourist_layout"
+                    layout="@layout/add_tourist_item" />
+
+                <include
+                    android:id="@+id/tour_price_layout"
+                    layout="@layout/tour_price_layout" />
+
+            </com.zhigaras.booking.ui.customViews.BookingLayout>
+
+        </ScrollView>
+
+        <include
+            android:id="@+id/bottom_button"
+            layout="@layout/bottom_button" />
+
+    </LinearLayout>
+
+    <include
+        android:id="@+id/progress_bar"
+        layout="@layout/common_progress_bar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center" />
+
+    <include
+        android:id="@+id/connection_error"
+        layout="@layout/connection_error_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center" />
+
+</FrameLayout>

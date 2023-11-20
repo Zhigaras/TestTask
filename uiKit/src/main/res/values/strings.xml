@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="retry">Retry</string>
+    <string name="price_from">From %1$s ₽</string>
+    <string name="price_exact">%1$s ₽</string>
+</resources>
