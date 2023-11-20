@@ -5,21 +5,18 @@ import android.util.AttributeSet
 import android.view.LayoutInflater
 import android.widget.ImageView
 import android.widget.LinearLayout
-import androidx.core.view.children
 import com.zhigaras.booking.R
-import com.zhigaras.booking.ui.customViews.inputLayouts.InputValidation
 
 class BookingLayout @JvmOverloads constructor(
     context: Context,
     attrs: AttributeSet? = null,
     defStyleAttr: Int = 0
-) : LinearLayout(context, attrs, defStyleAttr), InputValidation {
+) : AbstractLinearLayout(context, attrs, defStyleAttr) {
     
-    private val buyerInfoLayout by lazy { findViewById<BuyerInfoLayout>(R.id.buyer_info_layout) }
-    private val firstTourist by lazy { findViewById<TouristInfoView>(R.id.tourist_info_layout) }
+    private val firstTourist by lazy { findViewById<TouristInfoLayout>(R.id.tourist_info_layout) }
     private val addTouristView by lazy { findViewById<LinearLayout>(R.id.add_tourist_layout) }
     private val addTouristButton by lazy { findViewById<ImageView>(R.id.add_tourist_button) }
-    private val tourists by lazy { mutableListOf<TouristInfoView>(firstTourist) }
+    private val tourists by lazy { mutableListOf<TouristInfoLayout>(firstTourist) }
     
     override fun onAttachedToWindow() {
         super.onAttachedToWindow()
@@ -31,14 +28,9 @@ class BookingLayout @JvmOverloads constructor(
     
     private fun addTourist() {
         val view = LayoutInflater.from(context)
-            .inflate(R.layout.tourist_info, this, false) as TouristInfoView
+            .inflate(R.layout.tourist_info, this, false) as TouristInfoLayout
         tourists.add(view)
         view.bind(false, tourists.lastIndex)
         addView(view, indexOfChild(addTouristView))
-    }
-    
-    override fun isValid(): Boolean {
-        val childValidationList = children.filterIsInstance<InputValidation>().map { it.isValid() }
-        return childValidationList.toList().all { it }
     }
 }
