@@ -1,17 +1,15 @@
 package com.zhigaras.booking.ui.model
 
+import android.os.Parcelable
 import com.zhigaras.adapterdelegate.ListItem
+import kotlinx.parcelize.Parcelize
 
-data class TouristInfoUiModel(
-    private val number: Int,
-    private val isExpanded: Boolean,
-    private val firstName: String = "",
-    private val lastName: String = "",
-    private val dateOfBirth: String = "",
-    private val citizenship: String = "",
-    private val passportNumber: String = "",
-    private val passportValidityPeriod: String = ""
-) : ListItem {
+@Parcelize
+class TouristInfoUiModel(
+    val number: Int,
+    val isExpanded: Boolean,
+    val params: List<String>
+) : ListItem, Parcelable {
     
     override fun areItemTheSame(other: ListItem): Boolean {
         if (other !is TouristInfoUiModel) return false

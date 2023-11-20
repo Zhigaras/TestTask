@@ -10,6 +10,7 @@ import androidx.lifecycle.findViewTreeLifecycleOwner
 import androidx.lifecycle.lifecycleScope
 import com.zhigaras.booking.R
 import com.zhigaras.booking.ui.customViews.input.BaseInputLayout
+import com.zhigaras.booking.ui.model.TouristInfoUiModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.launch
 
@@ -25,6 +26,7 @@ class TouristInfoLayout @JvmOverloads constructor(
     private val expandButton by lazy { findViewById<ImageView>(R.id.expand_button) }
     private val payload by lazy { findViewById<TouristInfoPayloadLayout>(R.id.view_to_hide) }
     private val touristNumberTextView by lazy { findViewById<TextView>(R.id.tourist_number_text_view) }
+    private var touristNumber: Int = -1
     
     override fun onAttachedToWindow() {
         super.onAttachedToWindow()
@@ -50,5 +52,20 @@ class TouristInfoLayout @JvmOverloads constructor(
     fun bind(isExpanded: Boolean, number: Int) {
         expandedFlow.value = isExpanded
         touristNumberTextView.text = touristCountList[number]
+        touristNumber = number
+    }
+    
+    fun provideInfo() = TouristInfoUiModel(
+        touristNumber,
+        expandedFlow.value,
+        payload.children.map { (it as BaseInputLayout).text() }.toList()
+    )
+    
+    fun restoreData(state: TouristInfoUiModel) {
+        touristNumberTextView.text = touristCountList[state.number]
+        expandedFlow.value = state.isExpanded
+        payload.children.toList().zip(state.params).forEach { (view, value) ->
+            (view as BaseInputLayout).setText(value)
+        }
     }
 }
