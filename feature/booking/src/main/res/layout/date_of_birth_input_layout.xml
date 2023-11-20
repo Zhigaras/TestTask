@@ -10,7 +10,7 @@
     app:cursorColor="@color/gray20"
     app:hintTextColor="@color/gray10">
 
-    <com.zhigaras.booking.ui.customViews.input.BaseEditText
+    <com.zhigaras.booking.ui.customViews.input.DateOfBirthEditText
         style="@style/Widget.Material3.TextInputEditText.FilledBox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

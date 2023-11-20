@@ -20,7 +20,7 @@
     <string name="fuel_charge">Топливный сбор</string>
     <string name="service_charge">Сервисный сбор</string>
     <string name="total_price">К оплате</string>
-    <string-array name="tourist_info">
+    <string-array name="tourist_hints">
         <item>Имя</item>
         <item>Фамилия</item>
         <item>Дата рождения</item>
@@ -30,10 +30,10 @@
     </string-array>
     <string name="pay_button_text">Оплатить %1$s ₽</string>
     <string-array name="tourist_count">
-        <item>Первый</item>
-        <item>Второй</item>
-        <item>Третий</item>
-        <item>Четвертый</item>
-        <item>Пятый</item>
+        <item>Первый турист</item>
+        <item>Второй турист</item>
+        <item>Третий турист</item>
+        <item>Четвертый турист</item>
+        <item>Пятый турист</item>
     </string-array>
 </resources>

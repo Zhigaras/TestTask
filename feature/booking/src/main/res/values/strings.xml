@@ -20,7 +20,7 @@
     <string name="fuel_charge">Fuel charge</string>
     <string name="service_charge">Service charge</string>
     <string name="total_price">Total price</string>
-    <string-array name="tourist_info">
+    <string-array name="tourist_hints">
         <item>First name</item>
         <item>Last name</item>
         <item>Date of birth</item>
@@ -30,10 +30,10 @@
     </string-array>
     <string name="pay_button_text">Pay %1$s ₽</string>
     <string-array name="tourist_count">
-        <item>First</item>
-        <item>Second</item>
-        <item>Third</item>
-        <item>Fourth</item>
-        <item>Fifth</item>
+        <item>First tourist</item>
+        <item>Second tourist</item>
+        <item>Third tourist</item>
+        <item>Fourth tourist</item>
+        <item>Fifth tourist</item>
     </string-array>
 </resources>
