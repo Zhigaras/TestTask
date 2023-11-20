@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.zhigaras.booking.ui.customViews.inputLayouts.BaseInputLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<com.zhigaras.booking.ui.customViews.inputLayouts.PassportValidityPeriodInputLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     style="@style/Widget.Material3.TextInputLayout.FilledBox"
     android:layout_width="match_parent"
@@ -12,4 +12,4 @@
 
     <include layout="@layout/base_edit_text" />
 
-</com.zhigaras.booking.ui.customViews.inputLayouts.BaseInputLayout>
+</com.zhigaras.booking.ui.customViews.inputLayouts.PassportValidityPeriodInputLayout>

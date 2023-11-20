@@ -21,13 +21,13 @@
 
         <include layout="@layout/base_input_layout" />
 
-        <include layout="@layout/base_input_layout" />
+        <include layout="@layout/date_of_birth_input_layout" />
 
         <include layout="@layout/base_input_layout" />
 
-        <include layout="@layout/base_input_layout" />
+        <include layout="@layout/password_number_input_layout" />
 
-        <include layout="@layout/base_input_layout" />
+        <include layout="@layout/passport_validity_input_layout" />
 
     </LinearLayout>
 

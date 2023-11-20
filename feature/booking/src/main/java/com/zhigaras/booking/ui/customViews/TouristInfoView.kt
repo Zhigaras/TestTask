@@ -10,6 +10,7 @@ import androidx.core.view.isVisible
 import androidx.lifecycle.findViewTreeLifecycleOwner
 import androidx.lifecycle.lifecycleScope
 import com.zhigaras.booking.R
+import com.zhigaras.booking.ui.customViews.inputLayouts.AbstractInputLayout
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.launch
 
@@ -24,6 +25,7 @@ class TouristInfoView @JvmOverloads constructor(
     private val touristCountList = resources.getStringArray(R.array.tourist_count)
     private val expandButton by lazy { findViewById<ImageView>(R.id.expand_button) }
     private val viewToHide by lazy { findViewById<LinearLayout>(R.id.view_to_hide) }
+    private val inputFields by lazy { viewToHide.children.toList() }
     private val touristNumberTextView by lazy { findViewById<TextView>(R.id.tourist_number_text_view) }
     
     override fun onAttachedToWindow() {
@@ -32,7 +34,7 @@ class TouristInfoView @JvmOverloads constructor(
             expandedFlow.value = !expandedFlow.value
         }
         viewToHide.children.toList().zip(touristHintsList).forEach { (view, hint) ->
-            (view as BaseInputLayout).hint = hint
+            (view as AbstractInputLayout).hint = hint
         }
         
         findViewTreeLifecycleOwner()?.lifecycleScope?.launch {

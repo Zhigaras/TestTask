@@ -21,7 +21,7 @@
 
     <include
         android:id="@+id/email_input"
-        layout="@layout/base_input_layout"
+        layout="@layout/email_input_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginVertical="8dp" />
