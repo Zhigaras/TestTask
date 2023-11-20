@@ -19,8 +19,8 @@ class TouristInfoView @JvmOverloads constructor(
     defStyleAttr: Int = 0
 ) : LinearLayout(context, attrs, defStyleAttr) {
     
-    private val expandedFlow = MutableStateFlow(false)
-    private val touristInfoList = resources.getStringArray(R.array.tourist_info)
+    private val expandedFlow = MutableStateFlow(true)
+    private val touristHintsList = resources.getStringArray(R.array.tourist_hints)
     private val touristCountList = resources.getStringArray(R.array.tourist_count)
     private val expandButton by lazy { findViewById<ImageView>(R.id.expand_button) }
     private val viewToHide by lazy { findViewById<LinearLayout>(R.id.view_to_hide) }
@@ -31,20 +31,20 @@ class TouristInfoView @JvmOverloads constructor(
         expandButton.setOnClickListener {
             expandedFlow.value = !expandedFlow.value
         }
-        viewToHide.children.toList().zip(touristInfoList).forEach { (view, hint) ->
+        viewToHide.children.toList().zip(touristHintsList).forEach { (view, hint) ->
             (view as BaseInputLayout).hint = hint
         }
         
         findViewTreeLifecycleOwner()?.lifecycleScope?.launch {
-            expandedFlow.collect {
-                viewToHide.isVisible = it
+            expandedFlow.collect { isExpanded ->
+                viewToHide.isVisible = isExpanded
+                expandButton.rotation = if (isExpanded) 0f else 180f
             }
         }
     }
     
     fun bind(isExpanded: Boolean, number: Int) {
-        viewToHide.isVisible = isExpanded
-        expandButton.rotation = if (isExpanded) 0f else 180f
-        touristNumberTextView.text = touristCountList[number - 1]
+        expandedFlow.value = isExpanded
+        touristNumberTextView.text = touristCountList[number]
     }
 }

@@ -20,7 +20,7 @@
     <string name="fuel_charge">Fuel charge</string>
     <string name="service_charge">Service charge</string>
     <string name="total_price">Total price</string>
-    <string-array name="tourist_info">
+    <string-array name="tourist_hints">
         <item>First name</item>
         <item>Last name</item>
         <item>Date of birth</item>
