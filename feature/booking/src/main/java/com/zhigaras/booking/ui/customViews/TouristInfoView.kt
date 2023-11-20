@@ -25,8 +25,9 @@ class TouristInfoView @JvmOverloads constructor(
     override fun onAttachedToWindow() {
         super.onAttachedToWindow()
         
-        inputFields.zip(touristInfoList).forEach { (view, hint) ->
+        inputFields.zip(touristInfoList).forEachIndexed { index, (view, hint) ->
             (view as BaseInputLayout).hint = hint
+            view.setInputType(index)
         }
     }
     
