@@ -8,6 +8,7 @@ import android.widget.TextView
 import androidx.core.view.children
 import androidx.core.view.isVisible
 import com.zhigaras.booking.R
+import com.zhigaras.booking.ui.customViews.inputLayouts.AbstractInputLayout
 
 class TouristInfoView @JvmOverloads constructor(
     context: Context,
@@ -19,14 +20,14 @@ class TouristInfoView @JvmOverloads constructor(
     private val touristCountList = resources.getStringArray(R.array.tourist_count)
     private val expandButton by lazy { findViewById<ImageView>(R.id.expand_button) }
     private val viewToHide by lazy { findViewById<LinearLayout>(R.id.view_to_hide) }
-    private val inputFields by lazy { viewToHide.children.toList() }
+    private val inputFields by lazy { viewToHide.children.toList() as List<AbstractInputLayout> }
     private val touristNumberTextView by lazy { findViewById<TextView>(R.id.tourist_number_text_view) }
     
     override fun onAttachedToWindow() {
         super.onAttachedToWindow()
         
         inputFields.zip(touristInfoList).forEachIndexed { index, (view, hint) ->
-            (view as BaseInputLayout).hint = hint
+            view.hint = hint
             view.setInputType(index)
         }
     }
@@ -37,7 +38,7 @@ class TouristInfoView @JvmOverloads constructor(
     
     fun setTypingListeners(action: (Int, String) -> Unit) {
         inputFields.forEachIndexed { index, view ->
-            (view as BaseInputLayout).setTypingListener {
+            view.setTypingListener {
                 action.invoke(index, it)
             }
         }
@@ -47,7 +48,7 @@ class TouristInfoView @JvmOverloads constructor(
         bindExpanding(isExpanded)
         touristNumberTextView.text = touristCountList[number - 1]
         inputFields.zip(touristParams).forEach { (view, param) ->
-            (view as BaseInputLayout).setText(param)
+            view.setText(param)
         }
     }
     
