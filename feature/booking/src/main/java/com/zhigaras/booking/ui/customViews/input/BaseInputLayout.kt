@@ -23,6 +23,10 @@ class BaseInputLayout @JvmOverloads constructor(
         return (editText as InputValidation).isValid()
     }
     
+    override fun setOnFocusChangeListener(l: OnFocusChangeListener?) {
+        editText?.onFocusChangeListener = l
+    }
+    
     override fun onSaveInstanceState(): Parcelable {
         val bundle = Bundle().also {
             it.putParcelable("superState", super.onSaveInstanceState())

@@ -15,6 +15,13 @@ class BuyerInfoLayout @JvmOverloads constructor(
     private val phoneInput by lazy { findViewById<BaseInputLayout>(R.id.phone_input) }
     private val emailInput by lazy { findViewById<BaseInputLayout>(R.id.email_input) }
     
+    override fun onAttachedToWindow() {
+        super.onAttachedToWindow()
+        emailInput.setOnFocusChangeListener { _, hasFocus ->
+            if (!hasFocus) emailInput.isValid()
+        }
+    }
+
     fun provideInfo() = ParcelableBuyerInfo(phoneInput.text(), emailInput.text())
     
     fun restoreData(state: ParcelableBuyerInfo) {
