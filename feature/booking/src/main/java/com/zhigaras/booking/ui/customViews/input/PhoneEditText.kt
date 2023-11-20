@@ -16,4 +16,15 @@ class PhoneEditText @JvmOverloads constructor(
     override fun innerIsValid(): Boolean {
         return Random.nextBoolean() // TODO: replace with validation
     }
+    
+    override fun onAttachedToWindow() {
+        super.onAttachedToWindow()
+        setOnFocusChangeListener { _, hasFocus ->
+            hint = if (hasFocus) MASK else null
+        }
+    }
+    
+    companion object {
+        private const val MASK = "+7 (***) ***-**-**"
+    }
 }
