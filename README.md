@@ -1,6 +1,8 @@
 # TestTask
 Please, check "using_delegate_adapter" branch if you want to see it.
 
+https://www.youtube.com/watch?v=PmBz0lLHOf8&t=0s
+
 Made with:<br />
 
 OOP<br />
